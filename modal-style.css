@@ -45,3 +45,12 @@ body {
 .modal-content #result {
     margin-top: 20px;
 }
+
+#loss-percent-button {
+    margin-top: 20px;
+    border-color: #015445;  
+}
+
+#tint-convenient-width-box, #tint-convenient-height-box {
+    display: none;
+}
