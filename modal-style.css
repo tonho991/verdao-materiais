@@ -1,0 +1,47 @@
+body {
+    background: url(image.jpg);
+    background-repeat: no-repeat;
+}
+
+.modal-content {
+    box-shadow: 5px 5px 15px #00000036;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+.modal-backdrop {
+    backdrop-filter: blur(10px);
+    background-color: #00000070;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+}
+
+.btn {
+    &.btn-primary {
+        background-color: #015445;
+        border-color: #01352b;
+    }
+
+    &.btn-secondary {
+        background-color: #003229;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.3rem #04836c57;
+    }
+
+}
+
+.modal-content input:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.3rem #04836c57;
+    border-color: #015445;
+}
+
+.modal-content #result {
+    margin-top: 20px;
+}
