@@ -1,4 +1,4 @@
- $("#modal-tinta").modal("show")
+ $("#modal").modal("show")
 
 $("#btn-calc").on("click", () => {
   calculate();
@@ -27,7 +27,7 @@ function calculate() {
 
   //exemplo de piso 120x60
 
-  let itemArea = (100 / 100) * (100 / 100);
+  let itemArea = (120 / 100) * (100 / 60);
   let convenientArea = (convenientWidth) * (convenientLength);
 
   let items = (convenientArea / itemArea).toFixed(0);
