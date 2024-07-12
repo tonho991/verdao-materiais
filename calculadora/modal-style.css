@@ -42,15 +42,29 @@ body {
     border-color: #015445;
 }
 
-.modal-content #result {
+#result, #tint-result, #tile-result {
     margin-top: 20px;
 }
 
-#loss-percent-button {
+#loss-percent-button, #tint-percent-button, #tile-loss-percent-button {
     margin-top: 20px;
     border-color: #015445;  
 }
 
 #tint-convenient-width-box, #tint-convenient-height-box {
+    display: none;
+}
+
+select {
+    background-color: #007660;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+#tiles-options {
     display: none;
 }

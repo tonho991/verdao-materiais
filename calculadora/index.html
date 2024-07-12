@@ -19,7 +19,7 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="/modal-style.css" />
+  <link rel="stylesheet" href="/calculadora/modal-style.css" />
 </head>
 
 <body>
@@ -131,23 +131,28 @@
             <option value="pvc">Telha de PVC</option>
           </select>
 
-          <div id="tiles-options" style="display:none;">
+          <div id="tiles-options">
             <select id="tiles-type"></select>
           </div>
 
           <form id="calculate-content" style="display: none;">
             <div class="form-group">
-              <label for="tile-convenient-width-input" class="col-form-label">Largura do Comodo (m):</label>
+              <label for="tile-convenient-width-input" class="col-form-label">Largura do Telhado (m):</label>
               <input type="number" class="form-control" id="tile-convenient-width-input" />
             </div>
             <div class="form-group">
-              <label for="tile-convenient-length-input" class="col-form-label">Comprimeto do Comodo (m):</label>
+              <label for="tile-convenient-length-input" class="col-form-label">Comprimeto do Telhado (m):</label>
               <input type="number" class="form-control" id="tile-convenient-length-input" />
+            </div>
+
+            <div class="form-group">
+              <label for="roof-degree-input" class="col-form-label">Inclinacao (graus):</label>
+              <input type="number" class="form-control" id="roof-degree-input" />
             </div>
 
             <span>
               <input type="checkbox" id="tile-loss-percent-button">
-              <label for="loss-percent-button"> 10% de taxa de perca
+              <label for="tile-loss-percent-button"> 10% de taxa de perca
               </label>
             </span>
           </form>

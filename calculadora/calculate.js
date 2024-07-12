@@ -61,8 +61,7 @@ function calculate() {
     : (items * (1 + lossPercent / 100)).toFixed(0));
 
   $("#result").html(
-    `Quantidade de peças necessárias ${
-      lossPercent <= 0 ? "" : ", considerando a taxa de perca"
+    `Quantidade de peças necessárias ${lossPercent <= 0 ? "" : ", considerando a taxa de perca"
     }: ${finalItems}`
   );
 }
@@ -102,23 +101,36 @@ function calcularTinta() {
       : (finalValue * (1 + lossPercent / 100)).toFixed(2);
 
   $("#tint-result").html(
-    `Quantidade de litros necessárias${
-      lossPercent == 0 ? "" : ", considerando a taxa de perca"
+    `Quantidade de litros necessárias${lossPercent == 0 ? "" : ", considerando a taxa de perca"
     } : ${finalValue}`
   );
 }
 
 
-function calcularTelha(){
+function calcularTelha() {
   let width = parseFloat($('#tile-convenient-width-input').val());
   let length = parseFloat($('#tile-convenient-length-input').val());
-  let lossPercent = $('#tile-loss-percent-button').is(':checked') ? 10 : 0;
-  let area = width * length;
+  let lossPercent = $('#tile-loss-percent-button').is(':checked');
   let unitsPerSquareMeter = parseFloat($('#tiles-type').val());
+  let slope = parseFloat($('#roof-degree-input').val());
 
-  let totalUnits = (area * unitsPerSquareMeter).toFixed(0);
-  let finalUnits = lossPercent === 0 ? totalUnits : (totalUnits * (1 + lossPercent / 100)).toFixed(0);
+  let area = width * length;
+  
+  let tiles = 0;
 
-  $('#tile-result').html(`Quantidade de peças necessárias ${lossPercent <= 0 ? "" : ", considerando a taxa de perda"}: ${finalUnits}`);
+  if (slope !== 0) {
+    const slopeRadians = (slope * Math.PI) / 180;
+    const horizontalProjection = width * Math.cos(slopeRadians)
+    const efectiveArea = horizontalProjection * length;
+    tiles = efectiveArea * unitsPerSquareMeter;
 
+  } else {
+    tiles = area * unitsPerSquareMeter;
+  }
+
+  if (lossPercent) {
+    tiles = (tiles * 1.10)
+  }
+
+  $('#tile-result').html(`Quantidade <strong>aproximado</strong> de telhas necessárias ${lossPercent <= 0 ? "" : ", considerando a taxa de perda"}: ${tiles.toFixed(0)}`);
 }
