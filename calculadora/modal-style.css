@@ -1,18 +1,23 @@
 body {
-    background: url(image.jpg);
-    background-repeat: no-repeat;
+    padding: 10px;
 }
 
 .modal-content {
     box-shadow: 5px 5px 15px #00000036;
     border-radius: 10px;
     margin: 10px;
+    background-image: url(/calculadora/src/fundo_tijolo.png);
 }
-
 
 .modal-backdrop {
     backdrop-filter: blur(10px);
     background-color: #00000070;
+}
+
+.modal-header {
+    background-color: #015445;
+    box-shadow: 2px 2px 7px #00000036;
+    color: white;
 }
 
 .modal-backdrop.in {
