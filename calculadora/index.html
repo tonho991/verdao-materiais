@@ -6,29 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculo de Items</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
     integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA=="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+
 
   <link rel="stylesheet" href="/calculadora/modal-style.css" />
 </head>
 
 <body>
-  
+
   <button type="button" class="btn btn-primary" id="show-modal-floor">Calcular Piso</button>
   <button type="button" class="btn btn-primary" id="show-modal-tint">Calcular Tinta</button>
   <button type="button" class="btn btn-primary" id="show-modal-tile">Calcular Telha</button>
 
-
+  <!-- PopUp Cáculo do Piso-->
   <div class="modal" id="modal-piso" tabindex="-1" role="dialog" aria-labelledby="dialogTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -45,11 +49,12 @@
               <label for="convenient-length-input" class="col-form-label">Comprimeto do Comodo (m):</label>
               <input type="number" class="form-control" id="convenient-length-input" />
             </div>
-            <span>
-              <input type="checkbox" id="loss-percent-button">
-              <label for="loss-percent-button"> 10% de taxa de perca
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="loss-percent-button">
+              <label class="form-check-label" for="loss-percent-button">
+                Adicionar 10% de taxa de perda.
               </label>
-            </span>
+            </div>
           </form>
           <p id="result"></p>
         </div>
@@ -63,6 +68,7 @@
     </div>
   </div>
 
+  <!-- PopUp Cáculo do Tinta-->
   <div class="modal" id="modal-tinta" tabindex="-1" role="dialog" aria-labelledby="dialogTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -101,9 +107,12 @@
               <input type="number" class="form-control" id="tint-total-open-area-input" />
             </div>
 
-            <input type="checkbox" id="tint-loss-percent-button">
-            <label for="tint-loss-percent-button"> Aplicar 10% de taxa de perda. </label>
-
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="tint-loss-percent-button">
+              <label class="form-check-label" for="tint-loss-percent-button">
+                Adicionar 10% de taxa de perda.
+              </label>
+            </div>
           </form>
           <p id="tint-result"></p>
         </div>
@@ -117,6 +126,7 @@
     </div>
   </div>
 
+  <!-- PopUp Cáculo do Telha-->
   <div class="modal" id="modal-telha" tabindex="-1" role="dialog" aria-labelledby="dialogTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -153,11 +163,12 @@
               <input type="number" class="form-control" id="roof-degree-input" />
             </div>
 
-            <span>
-              <input type="checkbox" id="tile-loss-percent-button">
-              <label for="tile-loss-percent-button"> 10% de taxa de perca
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="tile-loss-percent-button">
+              <label class="form-check-label" for="tile-loss-percent-button">
+                Adicionar 10% de taxa de perda.
               </label>
-            </span>
+            </div>
           </form>
           <p id="tile-result"></p>
         </div>

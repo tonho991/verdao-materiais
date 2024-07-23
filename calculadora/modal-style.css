@@ -2,11 +2,12 @@ body {
     padding: 10px;
 }
 
+
 .modal-content {
     box-shadow: 5px 5px 15px #00000036;
     border-radius: 10px;
     margin: 10px;
-    background-image: url(/calculadora/src/fundo_tijolo.png);
+    background-image: url(/calculadora/images/fundo_tijolo.png);
 }
 
 .modal-backdrop {
@@ -47,16 +48,18 @@ body {
     border-color: #015445;
 }
 
-#result, #tint-result, #tile-result {
+#result,
+#tint-result,
+#tile-result {
     margin-top: 20px;
 }
 
-#loss-percent-button, #tint-percent-button, #tile-loss-percent-button {
-    margin-top: 20px;
-    border-color: #015445;  
+#tint-convenient-width-box,
+#tint-convenient-height-box {
+    display: none;
 }
 
-#tint-convenient-width-box, #tint-convenient-height-box {
+#tiles-options {
     display: none;
 }
 
@@ -70,6 +73,6 @@ select {
     width: 100%;
 }
 
-#tiles-options {
-    display: none;
+.form-check {
+    margin-top: 10px;
 }
