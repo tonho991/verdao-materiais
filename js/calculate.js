@@ -1,28 +1,32 @@
-/* obtendo parâmetros da url [type= piso, massa-corrida, selador, tinta, telha | length= tamanho do piso (ex. 40x40) ] */
+/* obtendo parâmetros da url [type= piso, massa-corrida, selador, tinta, telha | area= tamanho do piso (ex. 40x40) ] */
 let searchParams = new URLSearchParams(window.location.search);
 let type = searchParams.get("type");
-let length = searchParams.get("length");
+let area = searchParams.get("area");
 
 /* fazendo a conversão do comprimento (length) para lista de números. [0=base | 1=altura] */
-if (length) {
-  if (length.indexOf("x") < 0) {
-    length = ["120", "160"];
+if (area) {
+  if (area.indexOf("x") < 0) {
+    area = ["40", "40"];
   } else {
-    length = length.toLowerCase().split("x");
+    area = area.toLowerCase().split("x");
 
-    if (length.length != 2 && (!isNaN(length[0]) || !isNaN(length[0]))) {
-      length = ["120", "160"];
+    if (area.length != 2 && (!isNaN(area[0]) || !isNaN(area[1]))) {
+      area = ["40", "40"];
     }
   }
+
+  /* Definindo os valores da area no input do Piso */
+  $("#floor-width-input").val(area[0]);
+  $("#floor-length-input").val(area[1]);
 }
 
 /* obtendo o tipo de item dado pelo parâmetro da url, e mostrando o PopUp de acordo com o tipo. */
 if (type) {
   switch (type) {
     case "piso":
-      if (length)
+      if (area)
         $("#floorDialogTitle").html(
-          `Calcular Piso (${length[0]}x${length[1]})`
+          `Calcular Medidas Do Porcelanato (${area[0]}x${area[1]})`
         );
       $("#modal-piso").modal("show");
       break;
@@ -58,7 +62,7 @@ $("#show-modal-tint").on("click", () => {
 $("#show-modal-tile").on("click", () => {
   $("#modal-telha").modal("show");
 });
- 
+
 /* final */
 
 /* fazendo o cálculo dos itens quando clicado no botão de calcular. */
@@ -79,12 +83,10 @@ $("#tile-btn-calc").on("click", () => {
 /* mostrando os inputs de largura e altura quando a área for desconhecida (somente do tipo tinta). */
 $("#unknow-area-button").change(function () {
   if ($(this).is(":checked")) {
-    $("#tint-convenient-width-box").css("display", "block");
-    $("#tint-convenient-height-box").css("display", "block");
+    $("#unknow-area-container").css("display", "block");
     $("#tint-convenient-area").css("display", "none");
   } else {
-    $("#tint-convenient-width-box").css("display", "none");
-    $("#tint-convenient-height-box").css("display", "none");
+    $("#unknow-area-container").css("display", "none");
     $("#tint-convenient-area").css("display", "block");
   }
 });
@@ -110,6 +112,10 @@ $("#roof-type").change(function () {
 
 /* fim */
 
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+  });
+
 /* mostrando o layout de inputs de cálculo quando o tipo de telha for selecionado. */
 $("#tiles-type").change(function () {
   $("#calculate-content").show();
@@ -121,12 +127,17 @@ $("#tiles-type").change(function () {
 function calcularPiso() {
   let convenientWidth = parseFloat($("#convenient-width-input").val()) || 0;
   let convenientLength = parseFloat($("#convenient-length-input").val()) || 0;
-  let itemWidth = parseFloat(length[0]);
-  let itemHeight = parseFloat(length[1]);
+  let itemWidth = parseFloat($("#floor-width-input").val()) || 0;
+  let itemLength = parseFloat($("#floor-length-input").val()) || 0;
 
   /* verificando se os valores do cômodo são nulos. */
-  if (convenientWidth <= 0 || convenientLength <= 0) {
-    $("#result").html("Os valores nao pode ser menor que 0.");
+  if (
+    convenientWidth <= 0 ||
+    convenientLength <= 0 ||
+    itemLength <= 0 ||
+    itemWidth <= 0
+  ) {
+    $("#result").html("Os valores inseridos não pode ser menor ou igual a 0.");
     return;
   }
 
@@ -134,30 +145,29 @@ function calcularPiso() {
   let convenientArea = convenientWidth * convenientLength;
 
   /* obtendo a área do piso. */
-  let itemArea = (itemWidth / 100) * (itemHeight / 100);
+  let itemArea = (itemWidth / 100) * (itemLength / 100);
   let items = (convenientArea / itemArea).toFixed(0);
 
   /* verificando se o checkbox está ativado, e aplicando 10% de taxa de perda. */
   let finalItems = $("#loss-percent-button").is(":checked")
-    ? items
-    : (items * (1 + lossPercent / 100)).toFixed(0);
+    ? (items * 1.1).toFixed(0)
+    : items;
 
   /* imprimindo o resultado */
   $("#result").html(
     `Quantidade <strong>aproximada</strong> de peças necessárias ${
-      $("#loss-percent-button").is(":checked") 
-      ? ", considerando a taxa de perda." 
-      : ""
+      $("#loss-percent-button").is(":checked")
+        ? ", considerando a taxa de perda"
+        : ""
     }: ${finalItems}`
   );
 }
 
 /* Metódo de Cálculo de Tinta */
 function calcularTinta() {
-  let convenientArea = parseFloat($("#total-area-input").val()) || 0;
+  let convenientArea = parseFloat($("#tint-total-area-input").val()) || 0;
   let openArea = parseFloat($("#tint-total-open-area-input").val()) || 0;
   let totalCoat = parseFloat($("#tint-coat-input").val()) || 0;
-  let lossPercent = $("#tint-loss-percent-button").is(":checked") ? 10 : 0;
 
   /* Verificando o tipo de item, e colocando o titulo de acordo com o tipo. */
   if (type) {
@@ -173,8 +183,8 @@ function calcularTinta() {
 
   /* verificando se o checkbox da área desconhecida está ativado, e fazendo o cálculo da área. */
   if ($("#unknow-area-button").is(":checked")) {
-    let width = parseFloat($("#tint-convenient-width-input").val());
-    let height = parseFloat($("#convenient-height-input").val());
+    let width = parseFloat($("#tint-unk-convenient-width-input").val());
+    let height = parseFloat($("#tint-unk-convenient-height-input").val());
 
     convenientArea = width * height;
   }
@@ -208,9 +218,9 @@ function calcularTinta() {
   /* imprimindo o resultado */
   $("#tint-result").html(
     `Quantidade <strong>aproximada</strong> de litros necessários ${
-      $("#tint-loss-percent-button").is(":checked") 
-      ? ", considerando a taxa de perca"
-      : ""
+      $("#tint-loss-percent-button").is(":checked")
+        ? ", considerando a taxa de perda"
+        : ""
     } : ${finalValue}L`
   );
 }
@@ -253,9 +263,9 @@ function calcularTelha() {
   /* imprimindo o resultado */
   $("#tile-result").html(
     `Quantidade <strong>aproximada</strong> de telhas necessárias ${
-      $("#tile-loss-percent-button").is(":checked") 
-      ? ", considerando a taxa de perda"
-      : ""
+      $("#tile-loss-percent-button").is(":checked")
+        ? ", considerando a taxa de perda"
+        : ""
     }: ${tiles.toFixed(0)}`
   );
 }

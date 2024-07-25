@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Favicon (icone do site na barra)-->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/output.css">
+    <title>Menu - Verdão</title>
+</head>
+
+<body>
+    <header>
+        <div class="flex justify-between items-center bg-strongGreen p-4">
+            <div class="hidden md:flex items-center space-x-4">
+                <h3 class="font-semibold text-white text-sm">Matriz 65 3314-1000</h3>
+                <div class="border-l-4 border-limeGreen h-10"></div>
+                <h3 class="font-semibold text-white text-sm">Carmindo 65 3027-9700</h3>
+            </div>
+
+            <div class="flex-1 flex justify-center">
+                <img src="assets/img/logo_verdao_Prancheta 1.webp" alt="logo verdão" loading="lazy" class="h-12 w-auto">
+            </div>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <h3 class="font-semibold text-white text-sm">CPA 65 3056-5000</h3>
+                <div class="border-l-4 border-limeGreen h-10"></div>
+                <h3 class="font-semibold text-white text-sm">Matriz 65 3314-1000</h3>
+            </div>
+        </div>
+        <nav class="bg-limeGreen p-2 relative">
+            <ul class="flex items-center space-x-4">
+                <i class="fa-solid fa-bars text-white flex items-center ml-4 text-3xl cursor-pointer lg:hidden"
+                    id="menu-toggle"></i>
+                <div class="flex-1 flex justify-center">
+                    <li><a href="#" class="text-strongGreen hover:underline font-bold mr-3">Lojas</a></li>
+                    <li><a href="#" class="text-strongGreen hover:underline font-bold mr-3">Produtos</a></li>
+                    <li><a href="#" class="text-strongGreen hover:underline font-bold mr-3">Blog</a></li>
+                    <li><a href="#" class="text-strongGreen hover:underline font-bold">Sobre</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="menu"
+        class="fixed top-0 left-0 w-full h-full bg-limeGreen flex flex-col items-center justify-center z-50 hidden">
+        <button class="absolute top-4 right-4 text-white text-3xl focus:outline-none" id="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="text-white text-center space-y-6 px-6">
+            <h3 class="text-3xl font-bold">Contatos</h3>
+            <div class="space-y-4">
+                <div class="flex flex-col items-center">
+                    <h4 class="text-lg font-semibold">CPA</h4>
+                    <p class="text-md">65 3056-5000</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="text-lg font-semibold">Matriz</h4>
+                    <p class="text-md">65 3314-1000</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="text-lg font-semibold">Carmindo</h4>
+                    <p class="text-md">65 3027-9700</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/index.js" defer></script>
+</body>
+
+</html>
