@@ -3,9 +3,11 @@ let searchParams = new URLSearchParams(window.location.search);
 let type = searchParams.get("type");
 let area = searchParams.get("area");
 
-$('body').tooltip({
+/* configuração do tooltip */
+$('[data-toggle="tooltip"]').tooltip();
+$("body").tooltip({
   selector: '[data-toggle="tooltip"]',
-  trigger:'hover focus click manual'
+  trigger: "hover focus click manual",
 });
 
 /* fazendo a conversão do comprimento (length) para lista de números. [0=base | 1=altura] */
@@ -123,10 +125,6 @@ $("#roof-type").change(function () {
 });
 
 /* fim */
-
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
 
 /* mostrando o layout de inputs de cálculo quando o tipo de telha for selecionado. */
 $("#tiles-type").change(function () {
@@ -252,6 +250,14 @@ function calcularTelha() {
 
   /* obtendo a área do telhado */
   let roofArea = base * height;
+  let efectiveArea;
+
+  /* cálculo da área do telhado com o grau (slope) do telhado. [ Math.PI = 3,14... | Math.cos = cálculo do cosceno. ]*/
+  if (slope != 0 && !slope < 0) {
+    const slopeRadians = (slope * Math.PI) / 180;
+    const horizontalProjection = base * Math.cos(slopeRadians);
+    efectiveArea = horizontalProjection * height;
+  }
 
   let tiles = 0;
 
@@ -268,18 +274,13 @@ function calcularTelha() {
 
     const tileArea = (tileBase / 100) * (tileHeight / 100);
 
-    const slopeRadians = (slope * Math.PI) / 180;
-    const horizontalProjection = base * Math.cos(slopeRadians);
-    const efectiveArea = horizontalProjection * height;
-
-    tiles = (efectiveArea / tileArea);
+    if (efectiveArea) {
+      tiles = efectiveArea / tileArea;
+    } else {
+      tiles = roofArea / tileArea;
+    }
   } else {
-    if (slope !== 0) {
-      /* cálculo da área do telhado com o grau (slope) do telhado. [ Math.PI = 3,14... | Math.cos = cálculo do cosceno. ]*/
-      const slopeRadians = (slope * Math.PI) / 180;
-      const horizontalProjection = base * Math.cos(slopeRadians);
-      const efectiveArea = horizontalProjection * height;
-
+    if (efectiveArea) {
       /* multiplicando a área efetiva do telhado pela unidade por m² da telha. */
       tiles = efectiveArea * unitsPerSquareMeter;
     } else {
