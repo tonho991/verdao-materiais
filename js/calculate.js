@@ -3,6 +3,11 @@ let searchParams = new URLSearchParams(window.location.search);
 let type = searchParams.get("type");
 let area = searchParams.get("area");
 
+$('body').tooltip({
+  selector: '[data-toggle="tooltip"]',
+  trigger:'hover focus click manual'
+});
+
 /* fazendo a conversão do comprimento (length) para lista de números. [0=base | 1=altura] */
 if (area) {
   if (area.indexOf("x") < 0) {
@@ -81,12 +86,12 @@ $("#tile-btn-calc").on("click", () => {
 /* final */
 
 /* mostrando os inputs de largura e altura quando a área for desconhecida (somente do tipo tinta). */
-$("#unknow-area-button").change(function () {
+$("#unknown-area-button").change(function () {
   if ($(this).is(":checked")) {
-    $("#unknow-area-container").css("display", "block");
+    $("#unknown-area-container").css("display", "block");
     $("#tint-convenient-area").css("display", "none");
   } else {
-    $("#unknow-area-container").css("display", "none");
+    $("#unknown-area-container").css("display", "none");
     $("#tint-convenient-area").css("display", "block");
   }
 });
@@ -94,27 +99,34 @@ $("#unknow-area-button").change(function () {
 /* obtendo os tipos de telha e mostrando no PopUp (a variável "tileData" está no arquivo constants.js) */
 $("#roof-type").change(function () {
   let type = $(this).val();
-  $("#ceramica-options").hide();
-  $("#measurements").hide();
-  $("#tiles-type").empty();
 
-  $("#tiles-type").append(
-    `<option value="" disabled selected>Selecione o Tipo de Telha ${tileData[type].title} </option>`
-  );
-  tileData[type].list.forEach((tile) => {
+  if (type === "unknown") {
+    $("#tile-unknown-area-container").show();
+    $("#calculate-content").show();
+    $("#tiles-options").hide();
+  } else {
+    $("#tile-unknown-area-container").hide();
+    $("#ceramica-options").hide();
+    $("#measurements").hide();
+    $("#tiles-type").empty();
+
     $("#tiles-type").append(
-      `<option value="${tile.unit}">${tile.name}</option>`
+      `<option value="" disabled selected>Selecione o Tipo de Telha ${tileData[type].title} </option>`
     );
-  });
-
-  $("#tiles-options").show();
+    tileData[type].list.forEach((tile) => {
+      $("#tiles-type").append(
+        `<option value="${tile.unit}">${tile.name}</option>`
+      );
+    });
+    $("#tiles-options").show();
+  }
 });
 
 /* fim */
 
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-  });
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
 /* mostrando o layout de inputs de cálculo quando o tipo de telha for selecionado. */
 $("#tiles-type").change(function () {
@@ -227,34 +239,54 @@ function calcularTinta() {
 
 /* Metódo de Cálculo de Telha */
 function calcularTelha() {
-  let width = parseFloat($("#tile-convenient-width-input").val()) || 0;
-  let length = parseFloat($("#tile-convenient-length-input").val()) || 0;
+  let base = parseFloat($("#tile-convenient-width-input").val()) || 0;
+  let height = parseFloat($("#tile-convenient-length-input").val()) || 0;
   let unitsPerSquareMeter = parseFloat($("#tiles-type").val()) || 0;
   let slope = parseFloat($("#roof-degree-input").val()) || 0;
 
   /* verificando se os valores do cômodo são nulos. */
-  if (width <= 0 || length <= 0 || unitsPerSquareMeter <= 0) {
+  if (base <= 0 || height <= 0) {
     $("#tile-result").html("Os valores nao podem ser menor que 0 ou nulo.");
     return;
   }
 
   /* obtendo a área do telhado */
-  let area = width * length;
+  let roofArea = base * height;
 
   let tiles = 0;
-  if (slope !== 0) {
-    /* cálculo da área do telhado com o grau (slope) do telhado. [ Math.PI = 3,14... | Math.cos = cálculo do cosceno. ]*/
+
+  if ($("#roof-type").val() === "unknown") {
+    const tileBase =
+      parseFloat($("#tile-unk-convenient-width-input").val()) || 0;
+    const tileHeight =
+      parseFloat($("#tile-unk-convenient-height-input").val()) || 0;
+
+    if (tileBase <= 0 || tileHeight <= 0) {
+      $("#tile-result").html("Os valores não podem ser menor que 0 ou nulo.");
+      return;
+    }
+
+    const tileArea = (tileBase / 100) * (tileHeight / 100);
+
     const slopeRadians = (slope * Math.PI) / 180;
-    const horizontalProjection = width * Math.cos(slopeRadians);
-    const efectiveArea = horizontalProjection * length;
+    const horizontalProjection = base * Math.cos(slopeRadians);
+    const efectiveArea = horizontalProjection * height;
 
-    /* multiplicando a área efetiva do telhado pela unidade por m² da telha. */
-    tiles = efectiveArea * unitsPerSquareMeter;
+    tiles = (efectiveArea / tileArea);
   } else {
-    /* multiplicando a área do telhado pela unidade por m² da telha. */
-    tiles = area * unitsPerSquareMeter;
-  }
+    if (slope !== 0) {
+      /* cálculo da área do telhado com o grau (slope) do telhado. [ Math.PI = 3,14... | Math.cos = cálculo do cosceno. ]*/
+      const slopeRadians = (slope * Math.PI) / 180;
+      const horizontalProjection = base * Math.cos(slopeRadians);
+      const efectiveArea = horizontalProjection * height;
 
+      /* multiplicando a área efetiva do telhado pela unidade por m² da telha. */
+      tiles = efectiveArea * unitsPerSquareMeter;
+    } else {
+      /* multiplicando a área do telhado pela unidade por m² da telha. */
+      tiles = roofArea * unitsPerSquareMeter;
+    }
+  }
   /* verificando se o checkbox está ativado, e aplicando 10% de taxa de perda. */
   if ($("#tile-loss-percent-button").is(":checked")) {
     tiles = tiles * 1.1;
@@ -266,6 +298,6 @@ function calcularTelha() {
       $("#tile-loss-percent-button").is(":checked")
         ? ", considerando a taxa de perda"
         : ""
-    }: ${tiles.toFixed(0)}`
+    }: ${tiles.toFixed(0)} telhas.`
   );
 }

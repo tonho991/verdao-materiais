@@ -735,8 +735,8 @@ video {
   margin-left: 1rem;
 }
 
-.mr-10 {
-  margin-right: 2.5rem;
+.mr-1 {
+  margin-right: 0.25rem;
 }
 
 .mr-3 {
@@ -749,14 +749,6 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.mr-1 {
-  margin-right: 0.25rem;
 }
 
 .mt-3 {
@@ -2022,10 +2014,6 @@ video {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .px-1 {

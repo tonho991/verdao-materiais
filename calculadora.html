@@ -170,20 +170,20 @@
                         <form>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="unknow-area-button">
-                                <label class="form-check-label" for="unknow-area-button">
+                                <input class="form-check-input" type="checkbox" value="" id="unknown-area-button">
+                                <label class="form-check-label" for="unknown-area-button">
                                     Não conheço a área.
                                 </label>
                             </div>
 
-                            <div class="hidden" id="unknow-area-container">
-                                <label for="tint-unk-convenient-height-input" class="col-form-label">Altura do Cômodo
-                                    (m):</label>
-                                <input type="number" class="form-control" id="tint-unk-convenient-height-input" />
-
+                            <div class="hidden" id="unknown-area-container">
                                 <label for="tint-unk-convenient-width-input" class="col-form-label">Largura do Cômodo
                                     (m):</label>
                                 <input type="number" class="form-control" id="tint-unk-convenient-width-input" />
+
+                                <label for="tint-unk-convenient-height-input" class="col-form-label">Altura do Cômodo
+                                    (m):</label>
+                                <input type="number" class="form-control" id="tint-unk-convenient-height-input" />
                             </div>
 
                             <div class="form-group" id="tint-convenient-area">
@@ -239,6 +239,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="dialogTitle">Calcular Quantidade de Telha</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" onclick="$('#modal-telha').modal('hide')"></button>
                     </div>
                     <div class="modal-body">
 
@@ -246,9 +247,7 @@
                             <option value="" disabled selected>Selecione uma telha</option>
                             <option value="ceramica">Telha Cerâmica</option>
                             <option value="cimento">Telha de Cimento</option>
-                            <option value="fibrocimento">Telha de Fibrocimento</option>
-                            <option value="metalica">Telha Metálica</option>
-                            <option value="pvc">Telha de PVC</option>
+                            <option value="unknown">* Adicionar Medidas da Telha</option>
                         </select>
 
                         <div id="tiles-options" class="hidden">
@@ -256,6 +255,15 @@
                         </div>
 
                         <form id="calculate-content" class="hidden">
+                            <!-- Area desconhecida da telha-->
+                            <div class="hidden" id="tile-unknown-area-container">
+                                <label for="tile-unk-convenient-width-input" class="col-form-label">Largura do Telha (cm):</label>
+                                <input type="number" class="form-control" id="tile-unk-convenient-width-input" />
+
+                                <label for="tile-unk-convenient-height-input" class="col-form-label">Altura da Telha (cm):</label>
+                                <input type="number" class="form-control" id="tile-unk-convenient-height-input" />
+                            </div>
+
                             <div class="form-group">
                                 <label for="tile-convenient-width-input" class="col-form-label">Largura do Telhado
                                     (m):</label>
