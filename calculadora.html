@@ -28,6 +28,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/calculadora-style.css" />
+
+
     <title>Calculo de Itens - Verdão Materiais</title>
 </head>
 
@@ -104,7 +106,7 @@
                     Calcular Uso de Tinta
                 </button>
             </div>
-            
+
             <div class="mt-3">
                 <button type="button" class="btn btn-primary w-60 p-2 border-none" id="show-modal-tile">
                     <i class="fa-solid fa-calculator mr-1" style="color: #ffffff;"></i>
@@ -114,12 +116,15 @@
         </div>
 
 
+
         <!-- PopUp Cáculo do Piso-->
         <div class="modal" id="modal-piso" tabindex="-1" role="dialog" aria-labelledby="dialogTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="floorDialogTitle">Calcular Medidas Do Porcelanato</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close" onclick="$('#modal-piso').modal('hide')"></button>
                     </div>
                     <div class="modal-body">
                         <form>
@@ -165,6 +170,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="tintDialogTitle">Calcular Uso de Tinta</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close" onclick="$('#modal-tinta').modal('hide')"></button>
                     </div>
                     <div class="modal-body">
                         <form>
@@ -239,7 +246,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="dialogTitle">Calcular Quantidade de Telha</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" onclick="$('#modal-telha').modal('hide')"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close" onclick="$('#modal-telha').modal('hide')"></button>
                     </div>
                     <div class="modal-body">
 
@@ -247,7 +255,7 @@
                             <option value="" disabled selected>Selecione uma telha</option>
                             <option value="ceramica">Telha Cerâmica</option>
                             <option value="cimento">Telha de Cimento</option>
-                            <option value="unknown">Telha de Fibrocimento, PVC ou Aço</option>
+                            <option value="fibrocimento">Telha de Fibrocimento</option>
                         </select>
 
                         <div id="tiles-options" class="hidden">
@@ -255,14 +263,6 @@
                         </div>
 
                         <form id="calculate-content" class="hidden">
-                            <!-- Area desconhecida da telha-->
-                            <div class="hidden" id="tile-unknown-area-container">
-                                <label for="tile-unk-convenient-width-input" class="col-form-label">Largura do Telha (cm):</label>
-                                <input type="number" class="form-control" id="tile-unk-convenient-width-input" />
-
-                                <label for="tile-unk-convenient-height-input" class="col-form-label">Altura da Telha (cm):</label>
-                                <input type="number" class="form-control" id="tile-unk-convenient-height-input" />
-                            </div>
 
                             <div class="form-group">
                                 <label for="tile-convenient-width-input" class="col-form-label">Largura do Telhado
@@ -275,30 +275,13 @@
                                 <input type="number" class="form-control" id="tile-convenient-length-input" />
                             </div>
 
-                            <div class="form-group">
-                                <div class="flex items-center ">
-                                    <div class="w-full">
-                                        <label for="tint-total-open-area-input" class="col-form-label float-left">Inclinação (graus):</label>
-                                    </div>
-
-                                    <div class="float-right p-2" data-toggle="tooltip" data-placement="left"
-                                        title="A inclinação do telhado, medida em graus, é o ângulo entre a superfície do telhado e uma linha horizontal. Ela indica quão íngreme ou plana é a cobertura.
-                                        - Baixa (0° a 15°): Telhados quase planos.
-                                        - Moderada (15° a 30°): Telhados comuns em áreas residenciais.
-                                        - Alta (acima de 30°): Telhados muito inclinados.">
-                                        <i class="fas fa-question-circle"></i>
-                                    </div>
-                                </div>
-
-                                <input type="number" class="form-control" id="roof-degree-input" />
-                            </div>
-
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="tile-loss-percent-button">
                                 <label class="form-check-label" for="tile-loss-percent-button">
                                     Adicionar 10% de taxa de perda.
                                 </label>
                             </div>
+                            <small id="tile-waring" class="mt-3">O calculo da quantidade de telhas ja inclui a inclinacao de 35%.</small>
                         </form>
                         <p class="result-text" id="tile-result"></p>
                     </div>
@@ -313,8 +296,8 @@
         </div>
     </div>
 
-    <script src="js/calculate.js" defer></script>
     <script src="js/constants.js" defer></script>
+    <script src="js/calculate.js" defer></script>
     <script src="js/index.js" defer></script>
 </body>
 

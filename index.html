@@ -22,7 +22,13 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <!-- Fim -->
+
     <script src="https://www.google.com/recaptcha/api.js" defer async></script>
+
+    <meta name="og:title" content="Verdao Materiais de Construcao" />
+    <meta name="og:decription" content="Conheca a Loja mais verde de Cuiaba." />
+    <meta name="og:image" content="https://verdao-materiais.vercel.app/assets/img/logo_verdao_Prancheta%201.webp" />
+    <meta name="og:type" content="company" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -88,30 +94,30 @@
         </div>
     </div>
 
-    <form action="?" method="post" class="p-2 m-2 w-80 bg-strongGreen rounded text-white shadow-xl">
+    <form action="http://localhost:3000/api?action=sendComment" method="POST" class="p-2 m-2 w-80 bg-strongGreen rounded text-white shadow-xl">
         <p class="text-center mb-1 font-semibold text-xl">Enviar Comentário</p>
         <div class="form-group mb-3">
             <label for="input-name">Nome</label>
-            <input type="name" id="input-name" class="form-control hover:border-limeGreen" placeholder="Digite seu Nome Completo" />
+            <input type="name" id="input-name" name="nome" class="form-control hover:border-limeGreen" placeholder="Digite seu Nome Completo" />
         </div>
         <div class="form-group mb-3">
             <label for="input-email">E-mail</label>
-            <input type="email" id="input-email" class="form-control hover:border-limeGreen" aria-describedby="emailHelp"
+            <input type="email" id="input-email" name="email" class="form-control hover:border-limeGreen" aria-describedby="emailHelp"
                 placeholder="Digite seu endereço de E-mail" />
-            <small id="emailHelp">Nós nunca compartilhamos seu email com ninguém.</small>
+            <small id="emailHelp" class="mt-2">Nós nunca compartilhamos seu email com ninguém.</small>
         </div>
         <div class="form-group mb-3">
             <label for="input-telefone">Telefone</label>
-            <input type="tel" id="input-telefone" class="form-control hover:border-limeGreen" rows="3"
+            <input type="tel" id="input-telefone" name="telefone" class="form-control hover:border-limeGreen" rows="3"
                 placeholder="Digite seu número de telefone" />
         </div>
         <div class="form-group mb-3">
             <label for="input-assunto">Assunto</label>
-            <input type="name" id="input-assunto" class="form-control hover:border-limeGreen" placeholder="Digite o Assunto do Comentário" />
+            <input type="name" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen" placeholder="Digite o Assunto do Comentário" />
         </div>
         <div class="form-group mb-3">
             <label for="input-mensagem">Mensagem</label>
-            <textarea id="input-mensagem" class="form-control hover:border-limeGreen" rows="3" placeholder="Digite sua mensagem"></textarea>
+            <textarea id="input-mensagem" name="mensagem" class="form-control hover:border-limeGreen" rows="3" placeholder="Digite sua mensagem"></textarea>
         </div>
 
         <div class="g-recaptcha mb-3" data-sitekey="6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX"></div>

@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -657,6 +657,10 @@ video {
 
 .-inset-1 {
   inset: -0.25rem;
+}
+
+.end-1 {
+  inset-inline-end: 0.25rem;
 }
 
 .left-0 {
@@ -2629,10 +2633,6 @@ video {
       max-width: 1536px;
     }
   }
-}
-
-.hover\:border:hover {
-  border-width: 1px;
 }
 
 .hover\:border-limeGreen:hover {
