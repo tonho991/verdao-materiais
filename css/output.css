@@ -906,14 +906,6 @@ video {
   width: 100%;
 }
 
-.w-64 {
-  width: 16rem;
-}
-
-.w-96 {
-  width: 24rem;
-}
-
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2131,6 +2123,11 @@ video {
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2632,6 +2629,15 @@ video {
       max-width: 1536px;
     }
   }
+}
+
+.hover\:border:hover {
+  border-width: 1px;
+}
+
+.hover\:border-limeGreen:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(106 180 58 / var(--tw-border-opacity));
 }
 
 .hover\:bg-lightGreen:hover {
