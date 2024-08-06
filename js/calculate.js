@@ -10,6 +10,7 @@ $("body").tooltip({
   trigger: "hover focus click manual",
 });
 
+
 /* fazendo a conversão do comprimento (length) para lista de números. [0=base | 1=altura] */
 if (area) {
   if (area.indexOf("x") < 0) {
@@ -90,9 +91,11 @@ $("#tile-btn-calc").on("click", () => {
 /* mostrando os inputs de largura e altura quando a área for desconhecida (somente do tipo tinta). */
 $("#unknown-area-button").change(function () {
   if ($(this).is(":checked")) {
-    $("#tint-convenient-area").show()
-  } else {
+    $("#unknown-area-container").show();
     $("#tint-convenient-area").hide();
+  } else {
+    $("#unknown-area-container").hide();
+    $("#tint-convenient-area").show();
   }
 });
 
@@ -234,7 +237,8 @@ function calcularTinta() {
 function calcularTelha() {
   let base = parseFloat($("#tile-convenient-width-input").val()) || 0;
   let height = parseFloat($("#tile-convenient-length-input").val()) || 0;
-
+  let unitsPerSquareMeter = $("#tiles-type").val();
+  
   /* verificando se os valores do cômodo são nulos. */
   if (base <= 0 || height <= 0) {
     $("#tile-result").html("Os valores nao podem ser menor que 0 ou nulo.");
@@ -250,7 +254,6 @@ function calcularTelha() {
 
   /* verificando se o checkbox está ativado, e aplicando 10% de taxa de perda. */
   if ($("#tile-loss-percent-button").is(":checked")) {
-
     tiles = tiles * 1.1;
   }
 
