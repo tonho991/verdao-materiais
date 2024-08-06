@@ -79,7 +79,7 @@
     </header>
 
     <div id="menu"
-        class="fixed top-0 left-0 w-full h-full bg-limeGreen flex flex-col items-center justify-center z-50 hidden">
+        class="fixed top-0 left-0 w-full h-full bg-limeGreen flex-col items-center justify-center z-50 hidden">
         <button class="absolute top-4 right-4 text-white text-3xl focus:outline-none" id="close-menu">
             <i class="fa-solid fa-xmark"></i>
         </button>
@@ -102,8 +102,7 @@
         </div>
     </div>
 
-    <form action="/api?action=sendComment" method="POST"
-        class="p-2 m-2 w-80 bg-strongGreen rounded text-white shadow-xl">
+    <form id="sendComment" class="p-2 m-2 w-80 bg-strongGreen rounded text-white shadow-xl">
         <p class="text-center mb-1 font-semibold text-xl">Enviar Comentário</p>
         <div class="form-group mb-3">
             <label for="input-name">Nome</label>
@@ -122,7 +121,7 @@
         </div>
         <div class="form-group mb-3">
             <label for="input-assunto">Assunto</label>
-            <input type="name" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen"
+            <input type="name" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen w-max"
                 placeholder="Digite o Assunto do Comentário" />
         </div>
         <div class="form-group mb-3">
@@ -133,6 +132,8 @@
 
         <div class="g-recaptcha mb-3" data-sitekey="6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX"></div>
 
+        <p class="text-white" id="commentResponse"></p>
+
         <button class="btn-primary w-full p-2 border-none rounded bg-limeGreen hover:bg-lightGreen"
             data-action='submit'>Enviar</button>
     </form>
@@ -141,16 +142,9 @@
     <script src="js/index.js" defer></script>
 
     <script>
-       jQuery(function($){
-        $("#input-telefone").mask("(99) 9999-99999");
-        $("#input-telefone").blur(function(event) {
-            if($(this).val().length == 15){
-              $('#input-telefone').mask('(99) 99999-9999');
-            } else {
-              $('#input-telefone').mask('(99) 9999-99999');
-            }
-        });
-       })
+        jQuery(function ($) {
+            $("#input-telefone").mask("(99) 9999-99999");
+        })
     </script>
 </body>
 

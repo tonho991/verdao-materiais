@@ -16,4 +16,23 @@ document.addEventListener("DOMContentLoaded", () => {
     utilScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/js/utils.js'
   })
 
+  document.getElementById("sendComment").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "http://127.0.0.1:3000/api?action=sendComment", true);
+
+    xhr.onreadystatechange = function(){
+      if(this.readyState === XMLHttpRequest.DONE){
+        console.log(xhr.responseText)
+        document.getElementById("commentResponse").innerHTML = xhr.responseText;
+      }
+
+    }
+
+    xhr.send(formData)
+  })
 });
+
