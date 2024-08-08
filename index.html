@@ -25,7 +25,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.js"></script>
 
-    <script src="https://www.google.com/recaptcha/api.js" defer async></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
     <meta name="og:title" content="Verdao Materiais de Construcao" />
     <meta name="og:description" content="Conheca a Loja mais verde de Cuiaba." />
@@ -119,7 +120,7 @@
             <label for="input-telefone">Telefone</label>
             <input id="input-telefone" type="tel" class="form-control form-control-sm rounded-0 w-100 text-black">
         </div>
-        <div class="form-group mb-3">
+        <div class="form-group mb-3 w-80">
             <label for="input-assunto">Assunto</label>
             <input type="name" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen w-max"
                 placeholder="Digite o Assunto do Comentário" />
@@ -131,8 +132,6 @@
         </div>
 
         <div class="g-recaptcha mb-3" data-sitekey="6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX"></div>
-
-        <p class="text-white" id="commentResponse"></p>
 
         <button class="btn-primary w-full p-2 border-none rounded bg-limeGreen hover:bg-lightGreen"
             data-action='submit'>Enviar</button>

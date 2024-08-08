@@ -22,14 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData(this);
     const xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "http://127.0.0.1:3000/api?action=sendComment", true);
+    xhr.open("POST", "http://127.0.0.1:3000/api/comment", true);
 
-    xhr.onreadystatechange = function(){
-      if(this.readyState === XMLHttpRequest.DONE){
-        console.log(xhr.responseText)
-        document.getElementById("commentResponse").innerHTML = xhr.responseText;
+    xhr.onreadystatechange = function () {
+      if (this.readyState === XMLHttpRequest.DONE) {
+        alert(xhr.responseText)
       }
-
     }
 
     xhr.send(formData)
