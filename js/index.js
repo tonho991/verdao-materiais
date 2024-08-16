@@ -16,43 +16,45 @@ document.addEventListener("DOMContentLoaded", () => {
     utilScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.6/js/utils.js'
   })
 
-  document.getElementById("sendComment").addEventListener("submit", function (e) {
-    e.preventDefault();
 
-    if(!validateInputs()) return;
+});
 
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
+function validateInputs() {
+  const inputs = [
+    document.getElementById("input-name"),
+    document.getElementById("input-email"),
+    document.getElementById("input-telefone"),
+    document.getElementById("input-assunto"),
+    document.getElementById("input-mensagem")
+  ];
 
-    xhr.open("POST", "http://127.0.0.1:3000/api/comment", true);
-
-    xhr.onreadystatechange = function () {
-      if (this.readyState === XMLHttpRequest.DONE) {
-        alert(xhr.responseText)
-      }
+  for (let input of inputs) {
+    if (input.value.trim() === "") {
+      input.setCustomValidity("Este campo não pode estar vazio.");
+      input.reportValidity();
+      return false;
     }
+  }
 
-    xhr.send(formData)
-  });
+  return true;
+};
 
-  const validateInputs = () => {
-    const inputs = [
-      document.getElementById("input-name"),
-      document.getElementById("input-email"),
-      document.getElementById("input-telefone"),
-      document.getElementById("input-assunto"),
-      document.getElementById("input-mensagem")
-    ];
+document.getElementById("sendComment").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    inputs.forEach((input) => {
-      if(input.value.trim() === ""){
-        input.setCustomValidity("Este campo não pode estar vazio.");
-        input.reportValidity();
-        return false;
-      }  
-    });
+  if (!validateInputs()) return;
 
-    return true;
-  };
+  const formData = new FormData(this);
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("POST", "http://127.0.0.1:3000/api/comment", true);
+
+  xhr.onreadystatechange = function () {
+    if (this.readyState === XMLHttpRequest.DONE) {
+      alert(xhr.responseText)
+    }
+  }
+
+  xhr.send(formData)
 });
 

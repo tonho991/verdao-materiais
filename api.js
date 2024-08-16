@@ -7,7 +7,6 @@ const cors = require("cors");
 
 const recaptcha = new Recaptcha("6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX", "6LfIrRgqAAAAAP54V_0Lt9HVBzO8-lfDEYp6UEgm");
 
-app.set("trust proxy", true);
 app.use(cors());
 
 app.post("/api/comment", multer.none(), recaptcha.middleware.verify, async (req, res) => {
