@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     inputs.forEach((input) => {
-      if(element.value.trim() === ""){
+      if(input.value.trim() === ""){
         input.setCustomValidity("Este campo não pode estar vazio.");
         input.reportValidity();
         return false;
