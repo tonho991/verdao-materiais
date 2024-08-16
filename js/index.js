@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("sendComment").addEventListener("submit", function (e) {
     e.preventDefault();
 
+    if(!validateInputs()) return;
+
     const formData = new FormData(this);
     const xhr = new XMLHttpRequest();
 
@@ -31,6 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     xhr.send(formData)
-  })
+  });
+
+  const validateInputs = () => {
+    const inputs = [
+      document.getElementById("input-name"),
+      document.getElementById("input-email"),
+      document.getElementById("input-telefone"),
+      document.getElementById("input-assunto"),
+      document.getElementById("input-mensagem")
+    ];
+
+    inputs.forEach((input) => {
+      if(element.value.trim() === ""){
+        input.setCustomValidity("Este campo não pode estar vazio.");
+        input.reportValidity();
+        return false;
+      }  
+    });
+
+    return true;
+  };
 });
 
