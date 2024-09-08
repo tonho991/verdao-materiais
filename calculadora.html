@@ -28,6 +28,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/calculadora-style.css" />
+
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+
     <title>Calculo de Itens - Verdão Materiais</title>
 </head>
 
@@ -41,13 +50,13 @@
             </div>
 
             <div class="flex-1 flex justify-center">
-                <img src="assets/img/logo_verdao_Prancheta 1.webp" alt="logo verdão" loading="lazy" class="h-12 w-auto">
+                <img src="assets/img/logo-verdao.webp" alt="logo verdão" loading="lazy" class="h-12 w-auto">
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
                 <h3 class="font-semibold text-white text-sm">CPA 65 3056-5000</h3>
                 <div class="border-l-4 border-limeGreen h-10"></div>
-                <h3 class="font-semibold text-white text-sm">Matriz 65 3314-1000</h3>
+                <h3 class="font-semibold text-white text-sm">Santa Cruz 65 3611-6000</h3>
             </div>
         </div>
         <nav class="bg-limeGreen p-2 relative">
@@ -84,215 +93,426 @@
                     <h4 class="text-lg font-semibold">Carmindo</h4>
                     <p class="text-md">65 3027-9700</p>
                 </div>
+                <div class="flex flex-col items-center"></div>
+                    <h4 class="text-lg font-semibold">Santa Cruz</h4>
+                    <p class="text-md">65 3611-6000</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="middle p-2 w-full h-full">
+    <main>
+        <div class="middle p-2 w-full h-full">
 
-        <div class="buttons-container w-full text-center mt-10">
-            <div>
-                <button type="button" class="btn btn-primary w-60 p-2 border-none" id="show-modal-floor">
-                    <i class="fa-solid fa-calculator mr-1" style="color: #ffffff;"></i>
-                    Calcular Uso de Piso
-                </button>
+            <div class="buttons-container w-full text-center mt-10">
+                <div>
+                    <button type="button" class="btn-primary w-60 p-2 border-none" id="show-modal-floor">
+                        <i class="fa-solid fa-calculator mr-1" style="color: #ffffff;"></i>
+                        Calcular Uso de Piso
+                    </button>
+                </div>
+
+                <div class="mt-3">
+                    <button type="button" class="btn-primary w-60 p-2 border-none" id="show-modal-tint">
+                        <i class="fa-solid fa-calculator mr-1" style="color: #ffffff;"></i>
+                        Calcular Uso de Tinta
+                    </button>
+                </div>
+
+                <div class="mt-3">
+                    <button type="button" class="btn-primary w-60 p-2 border-none" id="show-modal-tile">
+                        <i class="fa-solid fa-calculator mr-1" style="color: #ffffff;"></i>
+                        Calcular Uso de Telha
+                    </button>
+                </div>
             </div>
 
-            <div class="mt-3">
-                <button type="button" class="btn btn-primary w-60 p-2 border-none" id="show-modal-tint">
-                    <i class="fa-solid fa-calculator mr-1" style="color: #ffffff;"></i>
-                    Calcular Uso de Tinta
-                </button>
-            </div>
-
-            <div class="mt-3">
-                <button type="button" class="btn btn-primary w-60 p-2 border-none" id="show-modal-tile">
-                    <i class="fa-solid fa-calculator mr-1" style="color: #ffffff;"></i>
-                    Calcular Uso de Telha
-                </button>
-            </div>
-        </div>
 
 
+            <!-- PopUp Cáculo do Piso-->
+            <div class="modal" id="modal-piso" tabindex="-1" role="dialog" aria-labelledby="dialogTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="floorDialogTitle">Calcular Medidas Do Porcelanato</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close" onclick="$('#modal-piso').modal('hide')"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="floor-width-input" class="col-form-label">Largura do
+                                        Porcelanato(cm):</label>
+                                    <input type="number" class="form-control" id="floor-width-input" />
 
-        <!-- PopUp Cáculo do Piso-->
-        <div class="modal" id="modal-piso" tabindex="-1" role="dialog" aria-labelledby="dialogTitle" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="floorDialogTitle">Calcular Medidas Do Porcelanato</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close" onclick="$('#modal-piso').modal('hide')"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="floor-width-input" class="col-form-label">Largura do
-                                    Porcelanato(cm):</label>
-                                <input type="number" class="form-control" id="floor-width-input" />
+                                    <label for="floor-length-input" class="col-form-label">Comprimeto do
+                                        Porcelanato(cm):</label>
+                                    <input type="number" class="form-control" id="floor-length-input" />
 
-                                <label for="floor-length-input" class="col-form-label">Comprimeto do
-                                    Porcelanato(cm):</label>
-                                <input type="number" class="form-control" id="floor-length-input" />
+                                    <label for="convenient-width-input" class="col-form-label">Largura do
+                                        Cômodo(m):</label>
+                                    <input type="number" class="form-control" id="convenient-width-input" />
 
-                                <label for="convenient-width-input" class="col-form-label">Largura do Cômodo(m):</label>
-                                <input type="number" class="form-control" id="convenient-width-input" />
-
-                                <label for="convenient-length-input" class="col-form-label">Comprimeto do
-                                    Cômodo(m):</label>
-                                <input type="number" class="form-control" id="convenient-length-input" />
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="loss-percent-button">
-                                <label class="form-check-label" for="loss-percent-button">
-                                    Adicionar 10% de taxa de perda.
-                                </label>
-                            </div>
-                        </form>
-                        <p class="result-text" id="result"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Fechar
-                        </button>
-                        <button type="button" class="btn btn-primary" id="btn-calc">Calcular</button>
+                                    <label for="convenient-length-input" class="col-form-label">Comprimeto do
+                                        Cômodo(m):</label>
+                                    <input type="number" class="form-control" id="convenient-length-input" />
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="loss-percent-button">
+                                    <label class="form-check-label" for="loss-percent-button">
+                                        Adicionar 10% de taxa de perda.
+                                    </label>
+                                </div>
+                            </form>
+                            <p class="result-text" id="result"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class=" btn-secondary" data-dismiss="modal">
+                                Fechar
+                            </button>
+                            <button type="button" class=" btn-primary" id="btn-calc">Calcular</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- PopUp Cáculo do Tinta-->
-        <div class="modal" id="modal-tinta" tabindex="-1" role="dialog" aria-labelledby="dialogTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="tintDialogTitle">Calcular Uso de Tinta</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close" onclick="$('#modal-tinta').modal('hide')"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
+            <!-- PopUp Cáculo do Tinta-->
+            <div class="modal" id="modal-tinta" tabindex="-1" role="dialog" aria-labelledby="dialogTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tintDialogTitle">Calcular Uso de Tinta</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close" onclick="$('#modal-tinta').modal('hide')"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="unknown-area-button">
-                                <label class="form-check-label" for="unknown-area-button">
-                                    Não conheço a área.
-                                </label>
-                            </div>
-
-                            <div class="hidden" id="unknown-area-container">
-                                <label for="tint-unk-convenient-width-input" class="col-form-label">Largura do Cômodo
-                                    (m):</label>
-                                <input type="number" class="form-control" id="tint-unk-convenient-width-input" />
-
-                                <label for="tint-unk-convenient-height-input" class="col-form-label">Altura do Cômodo
-                                    (m):</label>
-                                <input type="number" class="form-control" id="tint-unk-convenient-height-input" />
-                            </div>
-
-                            <div class="form-group" id="tint-convenient-area">
-                                <label for="tint-total-area-input" class="col-form-label">Total da Área (m²):</label>
-                                <input type="number" class="form-control" id="tint-total-area-input" />
-                            </div>
-
-                            <div class="form-group" id="tint-coat-area">
-                                <label for="tint-coat-input" class="col-form-label">Total de Demãos:</label>
-                                <input type="number" class="form-control" id="tint-coat-input" />
-                            </div>
-
-                            <div class="form-group">
-                                <div class="flex items-center ">
-                                    <div class="w-full">
-                                        <label for="tint-total-open-area-input" class="col-form-label float-left">Total
-                                            de Abertura
-                                            (m²):</label>
-                                    </div>
-
-                                    <div class="float-right p-2" data-toggle="tooltip" data-placement="top"
-                                        title="Aberturas do cômodo, como de portas e janelas em m².">
-                                        <i class="fas fa-question-circle"></i>
-                                    </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="unknown-area-button">
+                                    <label class="form-check-label" for="unknown-area-button">
+                                        Não conheço a área.
+                                    </label>
                                 </div>
 
-                                <input type="number" class="form-control" id="tint-total-open-area-input" />
-                            </div>
+                                <div class="hidden" id="unknown-area-container">
+                                    <label for="tint-unk-convenient-width-input" class="col-form-label">Largura do
+                                        Cômodo
+                                        (m):</label>
+                                    <input type="number" class="form-control" id="tint-unk-convenient-width-input" />
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="tint-loss-percent-button">
-                                <label class="form-check-label" for="tint-loss-percent-button">
-                                    Adicionar 10% de taxa de perda.
-                                </label>
-                            </div>
-                        </form>
-                        <p class="result-text" id="tint-result"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Fechar
-                        </button>
-                        <button type="button" class="btn btn-primary" id="tint-btn-calc">Calcular</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                    <label for="tint-unk-convenient-height-input" class="col-form-label">Altura do
+                                        Cômodo
+                                        (m):</label>
+                                    <input type="number" class="form-control" id="tint-unk-convenient-height-input" />
+                                </div>
 
-        <!-- PopUp Cáculo do Telha-->
-        <div class="modal" id="modal-telha" tabindex="-1" role="dialog" aria-labelledby="dialogTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="dialogTitle">Calcular Quantidade de Telha</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Close" onclick="$('#modal-telha').modal('hide')"></button>
-                    </div>
-                    <div class="modal-body">
+                                <div class="form-group" id="tint-convenient-area">
+                                    <label for="tint-total-area-input" class="col-form-label">Total da Área
+                                        (m²):</label>
+                                    <input type="number" class="form-control" id="tint-total-area-input" />
+                                </div>
 
-                        <select id="roof-type">
-                            <option value="" disabled selected>Selecione uma telha</option>
-                            <option value="ceramica">Telha Cerâmica</option>
-                            <option value="cimento">Telha de Cimento</option>
-                            <option value="fibrocimento">Telha de Fibrocimento</option>
-                        </select>
+                                <div class="form-group" id="tint-coat-area">
+                                    <label for="tint-coat-input" class="col-form-label">Total de Demãos:</label>
+                                    <input type="number" class="form-control" id="tint-coat-input" />
+                                </div>
 
-                        <div id="tiles-options" class="hidden">
-                            <select id="tiles-type"></select>
+                                <div class="form-group">
+                                    <div class="flex items-center ">
+                                        <div class="w-full">
+                                            <label for="tint-total-open-area-input"
+                                                class="col-form-label float-left">Total
+                                                de Abertura
+                                                (m²):</label>
+                                        </div>
+
+                                        <div class="float-right p-2" data-toggle="tooltip" data-placement="top"
+                                            title="Aberturas do cômodo, como de portas e janelas em m².">
+                                            <i class="fas fa-question-circle"></i>
+                                        </div>
+                                    </div>
+
+                                    <input type="number" class="form-control" id="tint-total-open-area-input" />
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="tint-loss-percent-button">
+                                    <label class="form-check-label" for="tint-loss-percent-button">
+                                        Adicionar 10% de taxa de perda.
+                                    </label>
+                                </div>
+                            </form>
+                            <p class="result-text" id="tint-result"></p>
                         </div>
-
-                        <form id="calculate-content" class="hidden">
-
-                            <div class="form-group">
-                                <label for="tile-convenient-width-input" class="col-form-label">Largura do Telhado
-                                    (m):</label>
-                                <input type="number" class="form-control" id="tile-convenient-width-input" />
-                            </div>
-                            <div class="form-group">
-                                <label for="tile-convenient-length-input" class="col-form-label">Comprimeto do Telhado
-                                    (m):</label>
-                                <input type="number" class="form-control" id="tile-convenient-length-input" />
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="tile-loss-percent-button">
-                                <label class="form-check-label" for="tile-loss-percent-button">
-                                    Adicionar 10% de taxa de perda.
-                                </label>
-                            </div>
-                            <small id="tile-waring" class="mt-3">O calculo da quantidade de telhas ja inclui a inclinacao de 35%.</small>
-                        </form>
-                        <p class="result-text" id="tile-result"></p>
+                        <div class="modal-footer">
+                            <button type="button" class=" btn-secondary" data-dismiss="modal">
+                                Fechar
+                            </button>
+                            <button type="button" class=" btn-primary" id="tint-btn-calc">Calcular</button>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Fechar
-                        </button>
-                        <button type="button" class="btn btn-primary" id="tile-btn-calc">Calcular</button>
+                </div>
+            </div>
+
+            <!-- PopUp Cáculo do Telha-->
+            <div class="modal" id="modal-telha" tabindex="-1" role="dialog" aria-labelledby="dialogTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="dialogTitle">Calcular Quantidade de Telha</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close" onclick="$('#modal-telha').modal('hide')"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <select id="roof-type">
+                                <option value="" disabled selected>Selecione uma telha</option>
+                                <option value="ceramica">Telha Cerâmica</option>
+                                <option value="cimento">Telha de Cimento</option>
+                                <option value="fibrocimento">Telha de Fibrocimento</option>
+                            </select>
+
+                            <div id="tiles-options" class="hidden">
+                                <select id="tiles-type"></select>
+                            </div>
+
+                            <form id="calculate-content" class="hidden">
+
+                                <div class="form-group">
+                                    <label for="tile-convenient-width-input" class="col-form-label">Largura do Telhado
+                                        (m):</label>
+                                    <input type="number" class="form-control" id="tile-convenient-width-input" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="tile-convenient-length-input" class="col-form-label">Comprimeto do
+                                        Telhado
+                                        (m):</label>
+                                    <input type="number" class="form-control" id="tile-convenient-length-input" />
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="tile-loss-percent-button">
+                                    <label class="form-check-label" for="tile-loss-percent-button">
+                                        Adicionar 10% de taxa de perda.
+                                    </label>
+                                </div>
+                                <small id="tile-waring" class="mt-3">O calculo da quantidade de telhas ja inclui a
+                                    inclinacao de 35%.</small>
+                            </form>
+                            <p class="result-text" id="tile-result"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class=" btn-secondary" data-dismiss="modal">
+                                Fechar
+                            </button>
+                            <button type="button" class=" btn-primary" id="tile-btn-calc">Calcular</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="footer">
+        <form action="#">
+            <h2>Fique por dentro das
+                novidades. Receba as melhores
+                oferta no seu e-mail.</h2>
+            <div class="input-box">
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="text" placeholder="Telefone" required>
+
+            </div>
+
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+            </div>
+
+            <input type="submit" value="Cadastrar" class="btn">
+        </form>
+
+        <div class="social-container">
+            <div class="social">
+                <img src="/assets/img/logo.branco.webp" alt="">
+                <h3>Siga em nossas redes sociais.</h3>
+                <a href="https://pt-br.facebook.com/grupoverdao/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UC_sCDT1_eXgLkP81cNkHz-w"><i
+                        class='fa-brands fa-youtube'></i></a>
+                <a href="https://www.instagram.com/grupoverdao/?hl=pt"><i class='fa-brands fa-instagram'></i></a>
+                <a href="https://www.linkedin.com/company/verdao-construcao-e-acabamento"><i
+                        class='fa-brands fa-linkedin'></i></a>
+            </div>
+            <div class="icon-paymento">
+                <h2>Formas de Pagamento</h2>
+                <img src="/assets/img/icon-visa.svg" alt="visa">
+                <img src="/assets/img/icon-mastercard.svg" alt="mastercard">
+                <img src="/assets/img/icon-elo.svg" alt="elo">
+                <img src="/assets/img/icon-deners-club.svg" alt="deners club">
+                <br>
+                <img src="/assets/img/icon-american-express.svg" alt="amex">
+                <img src="/assets/img/icon-pix.svg" alt="pix">
+                <img src="/assets/img/icon-boleto.svg" alt="boleto">
+
+                <p class="copyrighte">
+                    Copyright © 2024 | Todos os Direitos Reservados
+                </p>
+            </div>
+
+
+        </div>
+
+        <div class="container">
+            <details>
+                <summary>Atendimento</summary>
+                <div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">Fale Conosco</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Dúvidas Frequentes</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Trocas e Devoluções</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Retire na Loja</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Politica de Entrega</a>
+                        </li>
+                    </ul>
+            </details>
+        </div>
+        </div>
+
+        <div class="containe">
+
+            <h2>Atendimento</h2>
+            <div>
+                <ul class="list">
+                    <li>
+                        <a href="#">Fale Conosco</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Dúvidas Frequentes</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Trocas e Devoluções</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Retire na Loja</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Politica de Entrega</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="icon-pagamento">
+                <h3>Selo de Pagamento</h3>
+                <img src="/assets/img/icon-security-google.svg" alt="security">
+                <img src="/assets/img/icon-security-lets-encrypt.svg" alt="lets">
+            </div>
+
+
+        </div>
+
+        <div class="containe">
+
+            <h2>Institucional</h2>
+            <div>
+                <ul class="list">
+                    <li>
+                        <a href="#">A Verdão</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Produtos e Serviços</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Lojas</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Trabalhe Conosco</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <details>
+                <summary>Institucional</summary>
+                <div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">A Verdão</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Produtos e Serviços</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Lojas</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Trabalhe Conosco</a>
+                        </li>
+                    </ul>
+            </details>
+        </div>
+        </div>
+
+        <div class="icon-payment">
+            <h2>Formas de Pagamento</h2>
+            <img src="/assets/img/icon-visa.svg" alt="visa">
+            <img src="/assets/img/icon-mastercard.svg" alt="mastercard">
+            <img src="/assets/img/icon-elo.svg" alt="elo">
+            <img src="/assets/img/icon-deners-club.svg" alt="deners club">
+            <img src="/assets/img/icon-american-express.svg" alt="amex">
+            <img src="/assets/img/icon-pix.svg" alt="pix">
+            <img src="/assets/img/icon-boleto.svg" alt="boleto">
+        </div>
+
+
+        <div class="icon-payment">
+            <h2>Selo de Pagamento</h2>
+            <img src="/assets/img/icon-security-google.svg" alt="security">
+            <img src="/assets/img/icon-security-lets-encrypt.svg" alt="lets">
+        </div>
+
+        <p class="copyright">
+            Copyright © 2024 | Todos os Direitos Reservados
+        </p>
+    </footer>
 
     <script src="js/constants.js" defer></script>
     <script src="js/calculate.js" defer></script>

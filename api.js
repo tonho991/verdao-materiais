@@ -23,34 +23,30 @@ app.post("/api/comment", multer.none(), recaptcha.middleware.verify, async (req,
     return res.send("Falha na validacao do reCAPTCHA.")
   }
 
-  return saveComment(req, res);
-});
-
-
-
-function saveComment(req, res) {
   let comments = fs.readFileSync("./comments.json", "UTF-8");
   comments = JSON.parse(comments);
 
   if (
-    !req.query.nome ||
-    !req.query.email ||
-    !req.query.telefone ||
-    !req.query.assunto ||
-    !req.query.mensagem
+    !req.body.nome ||
+    !req.body.email ||
+    !req.body.telefone ||
+    !req.body.assunto ||
+    !req.body.mensagem
   ) {
     return res.status(200).send("Preencha todos os campos.")
   }
 
-  req.body.forEach(element => {
-    if(element.trim() === "") return res.send("Preencha todos os campos.")
-  });
+  const data = req.body;
+
+  for(let i = 0; i < data.length; i++){
+    if(data[i].trim() === "") return res.send("Preencha todos os campos.")
+  }
 
   comments.push(req.body);
   fs.writeFileSync("./comments.json", JSON.stringify(comments, null, 4));
 
-  res.send(200).send("Comentario enviado com sucesso!");
-}
+  res.status(200).send("Comentário enviado com sucesso!");
+});
 
 
 app.listen(3000, () => {

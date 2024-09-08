@@ -19,42 +19,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-function validateInputs() {
-  const inputs = [
-    document.getElementById("input-name"),
-    document.getElementById("input-email"),
-    document.getElementById("input-telefone"),
-    document.getElementById("input-assunto"),
-    document.getElementById("input-mensagem")
-  ];
-
-  for (let input of inputs) {
-    if (input.value.trim() === "") {
-      input.setCustomValidity("Este campo não pode estar vazio.");
-      input.reportValidity();
-      return false;
-    }
-  }
-
-  return true;
-};
-
-document.getElementById("sendComment").addEventListener("submit", function (e) {
+document.getElementById("sendComment").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  if (!validateInputs()) return;
-
   const formData = new FormData(this);
-  const xhr = new XMLHttpRequest();
 
-  xhr.open("POST", "http://127.0.0.1:3000/api/comment", true);
+  formData.append("telefone", document.getElementById("input-telefone").value)
 
-  xhr.onreadystatechange = function () {
-    if (this.readyState === XMLHttpRequest.DONE) {
-      alert(xhr.responseText)
+  try {
+    const response = await fetch("http://127.0.0.1:3000/api/comment", {
+      method: "POST",
+      body: formData
+    });
+
+    if (response.ok) {
+      const result = await response.text();
+      alert(result);
+    } else {
+      alert('Erro ao enviar o comentário');
     }
+  } catch (error) {
+    console.error("Erro na requisição:", error);
+    alert("Ocorreu um erro ao enviar o comentário.");
   }
 
-  xhr.send(formData)
 });
 

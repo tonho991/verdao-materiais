@@ -29,7 +29,7 @@
 
 
     <meta name="og:title" content="Verdao Materiais de Construcao" />
-    <meta name="og:description" content="Conheca a Loja mais verde de Cuiaba." />
+    <meta name="og:description" content="Conheça a Loja Mais Verde de Cuiabá." />
     <meta name="og:image" content="https://verdao-materiais.vercel.app/assets/img/logo_verdao_Prancheta%201.webp" />
     <meta name="og:type" content="company" />
 
@@ -38,6 +38,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/css/intlTelInput.css">
     <link rel="stylesheet" href="css/output.css">
+
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+
     <style>
         .iti {
             color: black;
@@ -56,13 +65,13 @@
             </div>
 
             <div class="flex-1 flex justify-center">
-                <img src="assets/img/logo_verdao_Prancheta 1.webp" alt="logo verdão" loading="lazy" class="h-12 w-auto">
+                <img src="assets/img/logo-verdao.webp" alt="logo verdão" loading="lazy" class="h-12 w-auto">
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
                 <h3 class="font-semibold text-white text-sm">CPA 65 3056-5000</h3>
                 <div class="border-l-4 border-limeGreen h-10"></div>
-                <h3 class="font-semibold text-white text-sm">Matriz 65 3314-1000</h3>
+                <h3 class="font-semibold text-white text-sm">Santa Cruz 65 3611-6000</h3>
             </div>
         </div>
         <nav class="bg-limeGreen p-2 relative">
@@ -78,7 +87,6 @@
             </ul>
         </nav>
     </header>
-
     <div id="menu"
         class="fixed top-0 left-0 w-full h-full bg-limeGreen flex-col items-center justify-center z-50 hidden">
         <button class="absolute top-4 right-4 text-white text-3xl focus:outline-none" id="close-menu">
@@ -99,43 +107,244 @@
                     <h4 class="text-lg font-semibold">Carmindo</h4>
                     <p class="text-md">65 3027-9700</p>
                 </div>
+                <div class="flex flex-col items-center"></div>
+                    <h4 class="text-lg font-semibold">Santa Cruz</h4>
+                    <p class="text-md">65 3611-6000</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <form id="sendComment" class="p-2 m-2 w-80 bg-strongGreen rounded text-white shadow-xl">
-        <p class="text-center mb-1 font-semibold text-xl">Enviar Comentário</p>
-        <div class="form-group mb-3">
-            <label for="input-name">Nome</label>
-            <input type="name" id="input-name" name="nome"
-                class="form-control hover:border-limeGreen" placeholder="Digite seu nome completo" />
-        </div>
-        <div class="form-group mb-3 ">
-            <label for="input-email">E-mail</label>
-            <input type="email" id="input-email" name="email" class="form-control hover:border-limeGreen"
-                aria-describedby="emailHelp" placeholder="Digite seu endereço de E-mail" />
-            <small id="emailHelp" class="mt-2">Nós nunca compartilhamos seu email com ninguém.</small>
-        </div>
-        <div class="form-group mb-3">
-            <label for="input-telefone">Telefone</label>
-            <input id="input-telefone" type="tel" class="form-control form-control-sm rounded-5 w-max text-black">
-        </div>
-        <div class="form-group mb-3">
-            <label for="input-assunto">Assunto</label>
-            <input type="text" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen"
-                placeholder="Digite o assunto" />
-        </div>
-        <div class="form-group mb-3">
-            <label for="input-mensagem">Mensagem</label>
-            <textarea id="input-mensagem" name="mensagem" class="form-control hover:border-limeGreen" rows="3"
-                placeholder="Digite sua mensagem"></textarea>
+    <main class="h-screen flex items-center justify-center ">
+        <form id="sendComment" class="p-3 m-2 w-80 bg-strongGreen rounded text-white shadow-xl">
+            <p class="text-center mb-1 font-semibold text-xl">Enviar Comentário</p>
+            <div class="form-group mb-3">
+                <label for="input-name">Nome</label>
+                <input type="name" id="input-name" name="nome" class="form-control hover:border-limeGreen"
+                    placeholder="Digite seu nome completo" />
+            </div>
+            <div class="form-group mb-3 ">
+                <label for="input-email">E-mail</label>
+                <input type="email" id="input-email" name="email" class="form-control hover:border-limeGreen"
+                    aria-describedby="emailHelp" placeholder="Digite seu endereço de E-mail" />
+                <small id="emailHelp" class="mt-2">Nós nunca compartilhamos seu email com ninguém.</small>
+            </div>
+            <div class="form-group mb-3">
+                <label for="input-telefone">Telefone</label>
+                <input id="input-telefone" type="tel" class="form-control form-control-sm rounded-5 w-max text-black">
+            </div>
+            <div class="form-group mb-3">
+                <label for="input-assunto">Assunto</label>
+                <input type="text" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen"
+                    placeholder="Digite o assunto" />
+            </div>
+            <div class="form-group mb-3">
+                <label for="input-mensagem">Mensagem</label>
+                <textarea id="input-mensagem" name="mensagem" class="form-control hover:border-limeGreen" rows="3"
+                    placeholder="Digite sua mensagem"></textarea>
+            </div>
+
+            <div class="g-recaptcha mb-3" data-sitekey="6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX"></div>
+
+            <button class="btn-primary w-full p-2 border-none rounded bg-limeGreen hover:bg-lightGreen"
+                data-action='submit'>Enviar</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <form action="#">
+            <h2>Fique por dentro das
+                novidades. Receba as melhores
+                oferta no seu e-mail.</h2>
+            <div class="input-box">
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="text" placeholder="Telefone" required>
+
+            </div>
+
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+            </div>
+
+            <input type="submit" value="Cadastrar" class="btn">
+        </form>
+
+        <div class="social-container">
+            <div class="social">
+                <img src="/assets/img/logo.branco.webp" alt="">
+                <h3>Siga em nossas redes sociais.</h3>
+                <a href="https://pt-br.facebook.com/grupoverdao/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UC_sCDT1_eXgLkP81cNkHz-w"><i
+                        class='fa-brands fa-youtube'></i></a>
+                <a href="https://www.instagram.com/grupoverdao/?hl=pt"><i class='fa-brands fa-instagram'></i></a>
+                <a href="https://www.linkedin.com/company/verdao-construcao-e-acabamento"><i
+                        class='fa-brands fa-linkedin'></i></a>
+            </div>
+            <div class="icon-paymento">
+                <h2>Formas de Pagamento</h2>
+                <img src="/assets/img/icon-visa.svg" alt="visa">
+                <img src="/assets/img/icon-mastercard.svg" alt="mastercard">
+                <img src="/assets/img/icon-elo.svg" alt="elo">
+                <img src="/assets/img/icon-deners-club.svg" alt="deners club">
+                <br>
+                <img src="/assets/img/icon-american-express.svg" alt="amex">
+                <img src="/assets/img/icon-pix.svg" alt="pix">
+                <img src="/assets/img/icon-boleto.svg" alt="boleto">
+
+                <p class="copyrighte">
+                    Copyright © 2024 | Todos os Direitos Reservados
+                </p>
+            </div>
+
+
         </div>
 
-        <div class="g-recaptcha mb-3" data-sitekey="6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX"></div>
+        <div class="container">
+            <details>
+                <summary>Atendimento</summary>
+                <div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">Fale Conosco</a>
+                        </li>
 
-        <button class="btn-primary w-full p-2 border-none rounded bg-limeGreen hover:bg-lightGreen"
-            data-action='submit'>Enviar</button>
-    </form>
+                        <li>
+                            <a href="#">Dúvidas Frequentes</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Trocas e Devoluções</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Retire na Loja</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Politica de Entrega</a>
+                        </li>
+                    </ul>
+            </details>
+        </div>
+        </div>
+
+        <div class="containe">
+
+            <h2>Atendimento</h2>
+            <div>
+                <ul class="list">
+                    <li>
+                        <a href="#">Fale Conosco</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Dúvidas Frequentes</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Trocas e Devoluções</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Retire na Loja</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Politica de Entrega</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="icon-pagamento">
+                <h3>Selo de Pagamento</h3>
+                <img src="/assets/img/icon-security-google.svg" alt="security">
+                <img src="/assets/img/icon-security-lets-encrypt.svg" alt="lets">
+            </div>
+
+
+        </div>
+
+        <div class="containe">
+
+            <h2>Institucional</h2>
+            <div>
+                <ul class="list">
+                    <li>
+                        <a href="#">A Verdão</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Produtos e Serviços</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Lojas</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Trabalhe Conosco</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <details>
+                <summary>Institucional</summary>
+                <div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">A Verdão</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Produtos e Serviços</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Lojas</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Trabalhe Conosco</a>
+                        </li>
+                    </ul>
+            </details>
+        </div>
+        </div>
+
+        <div class="icon-payment">
+            <h2>Formas de Pagamento</h2>
+            <img src="/assets/img/icon-visa.svg" alt="visa">
+            <img src="/assets/img/icon-mastercard.svg" alt="mastercard">
+            <img src="/assets/img/icon-elo.svg" alt="elo">
+            <img src="/assets/img/icon-deners-club.svg" alt="deners club">
+            <img src="/assets/img/icon-american-express.svg" alt="amex">
+            <img src="/assets/img/icon-pix.svg" alt="pix">
+            <img src="/assets/img/icon-boleto.svg" alt="boleto">
+        </div>
+
+
+        <div class="icon-payment">
+            <h2>Selo de Pagamento</h2>
+            <img src="/assets/img/icon-security-google.svg" alt="security">
+            <img src="/assets/img/icon-security-lets-encrypt.svg" alt="lets">
+        </div>
+
+        <p class="copyright">
+            Copyright © 2024 | Todos os Direitos Reservados
+        </p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/intlTelInput.min.js"></script>
     <script src="js/index.js" defer></script>

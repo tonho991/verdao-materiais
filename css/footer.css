@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    text-decoration: none;
+    border: none;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+main {
+    min-height: 70vh;
+}
+
+:root {
+    --primary-color: #003223;
+    --second-color: #003223;
+    --text-color: #003223;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 5.65rem;
+    background: var(--primary-color);
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: var(--second-color);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .social img {
+    width: 12rem;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 30px;
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.footer .social h3 {
+    background-color: var(--primary-color);
+    color: #AFD254;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer .social a {
+    font-size: 25px;
+    background-color: #fff;
+    color: #046b00;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2)translateY(-10px);
+    color: var(--text-color);
+}
+
+.footer ul {
+    background-color: var(--second-color);
+    margin-top: -0.5rem;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer ul li {
+    background-color: var(--second-color);
+    display: flex;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.footer ul li a {
+    background-color: var(--second-color);
+    color: #fff;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.footer ul li a:hover {
+    border-bottom: 2px solid #AFD254;
+}
+
+.footer .copyright {
+    background-color: var(--second-color);
+    margin-top: 40px;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+
+.footer form {
+    max-width: 70rem;
+    border-radius: 10px;
+    margin: 0.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: #AFD254;
+}
+
+.footer form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer form .input-box input {
+    width: 90%;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #000000;
+    background: #fff;
+    border-radius: 0.8rem;
+    border: 2px solid var(--);
+    margin: 0.8rem 0;
+    resize: none;
+}
+
+.footer form h2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.footer form .btn {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+details {
+    background-color: #003223;
+    color: #fff;
+    font-size: 1.5rem;
+    border: 1px solid #535353;
+    transition: 0.3s ease-in-out;
+}
+
+summary {
+    font-size: 1.2rem;
+    padding: .5em 1.3rem;
+    margin-left: 1rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+    color: #AFD254;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:after {
+    content: "\002B";
+}
+
+details[open] summary {
+    border-bottom: 1px solid #868484;
+    margin-bottom: .5em;
+
+}
+
+details[open] summary:after {
+    content: "\00D7";
+}
+
+details[open] div {
+    padding: .5em 1em;
+}
+
+.icon-payment {
+    display: inline;
+    justify-content: space-between;
+}
+
+.icon-payment h2 {
+    font-size: 1rem;
+    color: #AFD254;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+}
+
+.icon-payment img {
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: -1.5rem;
+    margin-left: 2.5rem;
+}
+
+.icon-payment h2 {
+    font-size: 1rem;
+    color: #AFD254;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+}
+
+.icon-paymento img {
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: -1.5rem;
+    margin-left: 2.5rem;
+}
+
+.icon-paymento h2 {
+    font-size: 1rem;
+    color: #AFD254;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+}
+
+@media(min-width:768px) and (max-width:1200px) {
+    .footer .icon-paymento {
+        display: none;
+    }
+
+    .footer .containe {
+        display: none;
+    }
+
+    .footer .copyrighte {
+        display: none;
+    }
+}
+
+@media(max-width:991px) {
+    .footer .icon-paymento {
+        display: none;
+    }
+
+    .footer .containe {
+        display: none;
+    }
+
+    .footer .copyrighte {
+        display: none;
+    }
+}
+
+@media(min-width:1200px) {
+    .footer {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer form {
+        width: 25rem;
+        margin-left: 2rem;
+    }
+
+    .footer .social {
+        margin-right: 5rem;
+        margin-top: 1rem;
+
+    }
+
+    .footer .social h3 {
+        margin-top: 1.5rem;
+    }
+
+    .footer .social a {
+        width: 2.5rem;
+        margin-top: 1rem;
+    }
+
+    .footer .icon-payment {
+        display: none;
+    }
+
+    .footer .container {
+        display: none;
+    }
+
+    .footer .icon-paymento {
+        margin-left: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .footer .social-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer .icon-paymento {
+        order: 2;
+    }
+
+    .footer .social {
+        order: 1;
+    }
+
+    .footer .containe {
+        display: block;
+        padding-top: 3.5rem;
+        padding-left: 1rem;
+    }
+
+    .footer .containe h2 {
+        font-size: 1.2rem;
+        text-align: left;
+        padding: .5rem 1.3rem;
+        margin-right: 1rem;
+        color: #AFD254;
+    }
+
+    .footer ul {
+        padding-top: 2rem;
+        text-align: left;
+    }
+
+    .footer ul li {
+        padding-bottom: 5px;
+    }
+
+    .icon-pagamento img {
+        display: inline-block;
+        margin-left: 1rem;
+    }
+
+    .icon-pagamento h3 {
+        font-size: 1rem;
+        color: #AFD254;
+        padding-top: 2rem;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+    }
+
+    .footer .copyright {
+        display: none;
+    }
+
+    .footer .copyrighte {
+        padding-top: 4rem;
+        padding-bottom: 1rem;
+        padding-left: 5rem;
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+    }
+
+}
