@@ -96,12 +96,6 @@ const tileData = {
           unit: 7,
         },
       ],
-    },
-    fibrocimento: {
-      title: "Fibrocimento",
-      list: [
-
-      ]
     }
   };
   

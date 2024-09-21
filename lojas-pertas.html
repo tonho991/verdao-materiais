@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Favicon (icone do site na barra)-->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
 
     <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
-    <meta name="og:title" content="Verdao Materiais de Construção/>
+    <meta name="og:title" content="Verdao Materiais de Construção" />
     <meta name="og:description" content="Conheça a Loja Mais Verde de Cuiabá." />
     <meta name="og:image" content="https://verdao-materiais.vercel.app/assets/img/logo_horizontal_black.png" />
     <meta name="og:type" content="company" />
@@ -29,9 +27,7 @@
         crossorigin="anonymous"></script>
     <!-- Fim -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.js"></script>
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -40,6 +36,7 @@
     <link rel="stylesheet" href="css/output.css">
 
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/calculadora-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,16 +44,16 @@
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
 
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         .iti {
             color: black;
         }
-
+        #map { height: 400px; }
     </style>
 
-    <title>Menu - Verdão</title>
+    <title>Lojas Perto de Mim</title>
 </head>
-
 <body>
     <header>
         <div class="flex justify-between items-center bg-strongGreen p-4">
@@ -117,40 +114,19 @@
         </div>
     </div>
 
-    <main class="h-screen flex items-center justify-center">
-        <form id="sendComment" class="p-3 m-10 w-80 bg-strongGreen rounded text-white shadow-xl">
-            <p class="text-center mb-1 font-semibold text-xl">Enviar Comentário</p>
-            <div class="form-group mb-3">
-                <label for="input-name">Nome</label>
-                <input type="name" id="input-name" name="nome" class="form-control hover:border-limeGreen"
-                    placeholder="Digite seu nome completo" />
-            </div>
-            <div class="form-group mb-3 ">
-                <label for="input-email">E-mail</label>
-                <input type="email" id="input-email" name="email" class="form-control hover:border-limeGreen"
-                    aria-describedby="emailHelp" placeholder="Digite seu endereço de E-mail" />
-                <small id="emailHelp" class="mt-2">Nós nunca compartilhamos seu email com ninguém.</small>
-            </div>
-            <div class="form-group mb-3">
-                <label for="input-telefone">Telefone</label>
-                <input id="input-telefone" type="tel" class="form-control form-control-sm rounded-5 w-max text-black">
-            </div>
-            <div class="form-group mb-3">
-                <label for="input-assunto">Assunto</label>
-                <input type="text" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen"
-                    placeholder="Digite o assunto" />
-            </div>
-            <div class="form-group mb-3">
-                <label for="input-mensagem">Mensagem</label>
-                <textarea id="input-mensagem" name="mensagem" class="form-control hover:border-limeGreen" rows="3"
-                    placeholder="Digite sua mensagem"></textarea>
-            </div>
+    <main>
+        <div id="map"></div>
+        <div class="mt-3 text-center mb-10">
+            <button type="button" class="btn-primary w-60 p-2 border-none" id="find-location">
+                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                Procurar Loja Mais Próxima
+            </button>
 
-            <div class="g-recaptcha mb-3" data-sitekey="6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX"></div>
-
-            <button class="btn-primary w-full p-2 border-none rounded bg-limeGreen hover:bg-lightGreen"
-                data-action='submit'>Enviar</button>
-        </form>
+            <button type="button" class="btn-primary w-60 p-2 border-none hidden" id="go-location">
+                <i class="fa-solid fa-car" style="color: #ffffff;"></i>
+                Dirija até lá
+            </button>
+        </div>
     </main>
 
     <footer class="footer">
@@ -347,16 +323,9 @@
             Copyright © 2024 | Todos os Direitos Reservados
         </p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/intlTelInput.min.js"></script>
-    <script src="js/comment.js" defer></script>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="js/menu.js" defer></script>
-
-    <script>
-        jQuery(function ($) {
-            $("#input-telefone").mask("(99) 9999-99999");
-        })
-    </script>
+    <script src="js/geolocation.js" defer></script>
 </body>
-
 </html>
