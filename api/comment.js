@@ -43,7 +43,7 @@ app.post("/api/comment", multer.none(), recaptcha.middleware.verify, async (req,
   }
 
   comments.push(req.body);
-  fs.writeFileSync("./comments.json", JSON.stringify(comments, null, 4));
+  fs.writeFileSync("./data/comments.json", JSON.stringify(comments, null, 4));
 
   res.status(200).send("Comentário enviado com sucesso!");
 });

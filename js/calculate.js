@@ -118,9 +118,9 @@ $("#roof-type").change(function () {
   $("#tiles-options").show();
 
   if(type == "fibrocimento"){
-    $("#tile-waring").html("O calculo da quantidade de telhas <strong>nao</strong> inclui a inclinacao de 35%.")
+    $("#tile-waring").html("O cálculo da quantidade de telhas <strong>não</strong> inclui a inclinação de 35%.")
   } else {
-    $("#tile-waring").html("O calculo da quantidade de telhas inclui a inclinacao de 35%.")
+    $("#tile-waring").html("O cálculo da quantidade de telhas inclui a inclinação de 35%.")
   }
 });
 

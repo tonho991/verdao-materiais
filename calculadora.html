@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Favicon (icone do site na barra)-->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <title>Cálculo de Itens - Verdão Construção e Acabamentos</title>
 
     <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
-    <meta name="og:title" content="Verdao Materiais de Construção" />
+    <meta name="og:title" content="Verdão Materiais de Construção" />
     <meta name="og:description" content="Conheça a Loja Mais Verde de Cuiabá." />
     <meta name="og:image" content="https://verdao-materiais.vercel.app/assets/img/logo_horizontal_black.png" />
     <meta name="og:type" content="company" />
@@ -32,18 +32,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/calculadora-style.css" />
-
+    <link rel="stylesheet" href="css/items.css">
     <link rel="stylesheet" href="css/footer.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
-
-    <title>Calculo de Itens - Verdão Materiais</title>
 </head>
 
 <body>
@@ -56,7 +56,7 @@
             </div>
 
             <div class="flex-1 flex justify-center">
-                <img src="assets/img/logo-verdao.webp" alt="logo verdão" loading="lazy" class="h-12 w-auto">
+                <img src="assets/img/logo_horizontal_white.png.png" alt="logo verdão" loading="lazy" class="h-12 w-auto">
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
@@ -100,11 +100,11 @@
                     <p class="text-md">65 3027-9700</p>
                 </div>
                 <div class="flex flex-col items-center"></div>
-                    <h4 class="text-lg font-semibold">Santa Cruz</h4>
-                    <p class="text-md">65 3611-6000</p>
-                </div>
+                <h4 class="text-lg font-semibold">Santa Cruz</h4>
+                <p class="text-md">65 3611-6000</p>
             </div>
         </div>
+    </div>
     </div>
 
     <main>
@@ -280,6 +280,7 @@
                                 <option value="" disabled selected>Selecione uma telha</option>
                                 <option value="ceramica">Telha Cerâmica</option>
                                 <option value="cimento">Telha de Cimento</option>
+                                <option value="cimento">Telha de Fibrocimento</option>
                             </select>
 
                             <div id="tiles-options" class="hidden">
@@ -307,8 +308,8 @@
                                         Adicionar 10% de taxa de perda.
                                     </label>
                                 </div>
-                                <small id="tile-waring" class="mt-3">O calculo da quantidade de telhas ja inclui a
-                                    inclinacao de 35%.</small>
+                                <small id="tile-waring" class="mt-3">O cálculo da quantidade de telhas já inclui a
+                                    inclinação de 35%.</small>
                             </form>
                             <p class="result-text" id="tile-result"></p>
                         </div>

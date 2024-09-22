@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
-    <title>Verdão Construção e Acabamentos</title>
+    <title>Enviar Comentário - Verdão Construção e Acabamentos</title>
 
     <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
     <meta name="og:title" content="Verdão Materiais de Construção" />
@@ -29,16 +29,18 @@
         crossorigin="anonymous"></script>
     <!-- Fim -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.js"></script>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/css/intlTelInput.css">
-
+   
     <link rel="stylesheet" href="css/output.css">
-    <link rel="stylesheet" href="css/items.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/items.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,8 +55,6 @@
         }
 
     </style>
-
-    
 </head>
 
 <body>
@@ -110,15 +110,51 @@
                     <p class="text-md">65 3027-9700</p>
                 </div>
                 <div class="flex flex-col items-center"></div>
-                <h4 class="text-lg font-semibold">Santa Cruz</h4>
-                <p class="text-md">65 3611-6000</p>
+                    <h4 class="text-lg font-semibold">Santa Cruz</h4>
+                    <p class="text-md">65 3611-6000</p>
+                </div>
             </div>
         </div>
     </div>
-    </div>
 
-    <main>
+    <main class="h-screen flex items-center justify-center">
+        <form id="sendComment" class="p-3 m-10 w-80 bg-strongGreen rounded text-white shadow-xl">
+            <p class="text-center mb-1 font-semibold text-xl">Enviar Comentário</p>
+            <div class="form-group mb-3">
+                <label for="input-name">Nome</label>
+                <input type="name" id="input-name" name="nome" class="form-control hover:border-limeGreen"
+                    placeholder="Digite seu nome completo" />
+            </div>
+            <div class="form-group mb-3 ">
+                <label for="input-email">E-mail</label>
+                <input type="email" id="input-email" name="email" class="form-control hover:border-limeGreen"
+                    aria-describedby="emailHelp" placeholder="Digite seu endereço de E-mail" />
+                <small id="emailHelp" class="mt-2">Nós nunca compartilhamos seu email com ninguém.</small>
+            </div>
+            <div class="form-group mb-3">
+                <label for="input-telefone">Telefone</label>
+                <input id="input-telefone" type="tel" class="form-control form-control-sm rounded-5 w-max text-black">
+            </div>
+            <div class="form-group mb-3">
+                <label for="input-assunto">Assunto</label>
+                <input type="text" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen"
+                    placeholder="Digite o assunto" />
+            </div>
+            <div class="form-group mb-3">
+                <label for="input-mensagem">Mensagem</label>
+                <textarea id="input-mensagem" name="mensagem" class="form-control hover:border-limeGreen" rows="3"
+                    placeholder="Digite sua mensagem"></textarea>
+            </div>
+
+            <div class="g-recaptcha mb-3" data-sitekey="6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX"></div>
         
+            <div class="loading-container hidden">
+                <div class="loading hidden"></div>
+            </div>
+
+            <button class="btn-secondary w-full p-2 border-none rounded bg-limeGreen hover:bg-lightGreen"
+                data-action='submit'>Enviar</button>
+        </form>
     </main>
 
     <footer class="footer">
@@ -316,9 +352,13 @@
         </p>
     </footer>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/intlTelInput.min.js"></script>
+    <script src="js/comment.js" defer></script>
     <script src="js/menu.js" defer></script>
-    <script src="js/geolocation.js" defer></script>
+
+    <script>
+        
+    </script>
 </body>
 
 </html>

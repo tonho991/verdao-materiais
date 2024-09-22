@@ -18,30 +18,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+jQuery(function ($) {
+  $("#input-telefone").mask("(99) 9999-99999");
 
-document.getElementById("sendComment").addEventListener("submit", async function (e) {
-  e.preventDefault();
+  $("#sendComment").on("submit", async function (e) {
+    e.preventDefault();
+    $(".loading").show();
+    const formData = new FormData(this);
 
-  const formData = new FormData(this);
+    formData.append("telefone", document.getElementById("input-telefone").value)
 
-  formData.append("telefone", document.getElementById("input-telefone").value)
+    try {
+      const response = await fetch("http://127.0.0.1:3000/api/comment", {
+        method: "POST",
+        body: formData
+      });
 
-  try {
-    const response = await fetch("http://127.0.0.1:3000/api/comment", {
-      method: "POST",
-      body: formData
-    });
-
-    if (response.ok) {
-      const result = await response.text();
-      alert(result);
-    } else {
-      alert('Erro ao enviar o comentário');
+      if (response.ok) {
+        const result = await response.text();
+        alert(result);
+        $(".loading").hide();
+      } else {
+        alert('Erro ao enviar o comentário');
+        $(".loading").hide();
+      }
+    } catch (error) {
+      console.error("Erro na requisição:", error);
+      alert("Ocorreu um erro ao enviar o comentário.");
+      $(".loading").hide();
     }
-  } catch (error) {
-    console.error("Erro na requisição:", error);
-    alert("Ocorreu um erro ao enviar o comentário.");
-  }
+  })
+})
 
-});
 

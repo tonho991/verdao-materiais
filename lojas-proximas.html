@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <title>Lojas Mais Próximas - Verdão Construção e Acabamentos</title>
 
     <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
-    <meta name="og:title" content="Verdao Materiais de Construção" />
+    <meta name="og:title" content="Verdão Materiais de Construção" />
     <meta name="og:description" content="Conheça a Loja Mais Verde de Cuiabá." />
     <meta name="og:image" content="https://verdao-materiais.vercel.app/assets/img/logo_horizontal_black.png" />
     <meta name="og:type" content="company" />
@@ -27,16 +29,17 @@
         crossorigin="anonymous"></script>
     <!-- Fim -->
 
-    
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/css/intlTelInput.css">
-    <link rel="stylesheet" href="css/output.css">
 
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/items.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/calculadora-style.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,16 +47,18 @@
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
 
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         .iti {
             color: black;
         }
-        #map { height: 400px; }
-    </style>
 
-    <title>Lojas Perto de Mim</title>
+        #map {
+            height: 400px;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <div class="flex justify-between items-center bg-strongGreen p-4">
@@ -64,7 +69,7 @@
             </div>
 
             <div class="flex-1 flex justify-center">
-                <img src="assets/img/logo-verdao.webp" alt="logo verdão" loading="lazy" class="h-12 w-auto">
+                <img src="assets/img/logo_horizontal_white.png.png" alt="logo verdão" loading="lazy" class="h-12 w-auto">
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
@@ -107,18 +112,22 @@
                     <p class="text-md">65 3027-9700</p>
                 </div>
                 <div class="flex flex-col items-center"></div>
-                    <h4 class="text-lg font-semibold">Santa Cruz</h4>
-                    <p class="text-md">65 3611-6000</p>
-                </div>
+                <h4 class="text-lg font-semibold">Santa Cruz</h4>
+                <p class="text-md">65 3611-6000</p>
             </div>
         </div>
     </div>
+    </div>
 
     <main>
-        <div id="map"></div>
-        <div class="mt-3 text-center mb-10">
+        <div id="map">
+        </div>
+        <div class="loading-container hidden">
+            <div class="loading hidden"></div>
+        </div>
+        <div class="buttons-container mt-3 text-center mb-10">
             <button type="button" class="btn-primary w-60 p-2 border-none" id="find-location">
-                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-magnifying-glass hidden" style="color: #ffffff;" id="button-icon"></i>
                 Procurar Loja Mais Próxima
             </button>
 
@@ -323,9 +332,10 @@
             Copyright © 2024 | Todos os Direitos Reservados
         </p>
     </footer>
-    
+
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="js/menu.js" defer></script>
-    <script src="js/geolocation.js" defer></script>
+    <script src="js/find-stores.js" defer></script>
 </body>
+
 </html>
