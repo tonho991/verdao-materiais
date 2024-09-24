@@ -11,6 +11,7 @@ $("body").tooltip({
 });
 
 
+
 /* fazendo a conversão do comprimento (length) para lista de números. [0=base | 1=altura] */
 if (area) {
   if (area.indexOf("x") < 0) {

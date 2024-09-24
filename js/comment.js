@@ -29,7 +29,7 @@ jQuery(function ($) {
     formData.append("telefone", document.getElementById("input-telefone").value)
 
     try {
-      const response = await fetch("http://127.0.0.1:3000/api/comment", {
+      const response = await fetch("https://api-verdao-materiais.vercel.app/comment", {
         method: "POST",
         body: formData
       });
