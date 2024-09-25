@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
-    <title>Verdão Construção e Acabamentos</title>
+    <title>Lojas Mais Próximas - Verdão Construção e Acabamentos</title>
 
     <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
     <meta name="og:title" content="Verdão Materiais de Construção" />
@@ -38,6 +38,7 @@
 
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/items.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/footer.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -47,14 +48,12 @@
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         .iti {
             color: black;
         }
-
     </style>
-
-    
 </head>
 
 <body>
@@ -67,7 +66,8 @@
             </div>
 
             <div class="flex-1 flex justify-center">
-                <img src="assets/img/logo_horizontal_white.png.png" alt="logo verdão" loading="lazy" class="h-12 w-auto">
+                <img src="assets/img/logo_horizontal_white.png.png" alt="logo verdão" loading="lazy"
+                    class="h-12 w-auto">
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
@@ -118,8 +118,112 @@
     </div>
 
     <main>
-        
+        <div class="carrossel">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="/assets/img/confiraaqui.png" alt="Primeiro Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/assets/img/vedao500capa.png" alt="Segundo Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/assets/img/verdao5001.png" alt="Terceiro Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/assets/img/verdao5002.png" alt="Terceiro Slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+            </div>
+
+
+        </div>
+
+        <div class="products-container">
+
+            <div class="title-container">
+                <h2 id="product-section-title">Promoções</h2>
+            </div>
+            <section class="produtos">
+
+                <div>
+                    <div class="circulo">
+                        <img class="img-produto"
+                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
+                    </div>
+                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                </div>
+
+                <div>
+                    <div class="circulo">
+                        <img class="img-produto"
+                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
+                    </div>
+                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                </div>
+
+                <div>
+                    <div class="circulo">
+                        <img class="img-produto"
+                            src="https://chatuba.vtexassets.com/arquivos/ids/173558/Tinta-Acrilica-Muda-Facil-Branco-Neve-Fosco-20L-Glasurit.png?v=637653460367370000">
+                    </div>
+                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                </div>
+
+                <div>
+                    <div class="circulo">
+                        <img class="img-produto"
+                            src="https://img.irroba.com.br/fit-in/600x600/filters:fill(transparent):quality(80)/tintasjd/catalog/dacar/acrilico-premium-18l.png">
+                    </div>
+                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                </div>
+
+                <div>
+                    <div class="circulo">
+                        <img class="img-produto"
+                            src="https://chatuba.vtexassets.com/arquivos/ids/173558/Tinta-Acrilica-Muda-Facil-Branco-Neve-Fosco-20L-Glasurit.png?v=637653460367370000">
+                    </div>
+                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                </div>
+
+                <div>
+                    <div class="circulo">
+                        <img class="img-produto"
+                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
+                    </div>
+                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                </div>
+
+            </section>
+        </div>
+
     </main>
+    <section class="car-event" id="ford-pickup">
+        <div class="text-container">
+            <h2 id="event-title" class="text-white">
+                VENHA CONHECER O <br>
+                <span id="mark-text">PRIMEIRO CARRO QUE O VOVÔ FEZ ENTREGA! </span> <br>
+                FORD PICK-UP 1929 NAS LOJAS DA VERDÃO!</h2>
+        </div>
+        <div class="image-background">
+            <img id="car-img" src="/assets/img/carro_transparent.png" alt="Carro" />
+        </div>
+        <div class="rect"></div>
+    </section>
 
     <footer class="footer">
         <form action="#">
@@ -316,9 +420,8 @@
         </p>
     </footer>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="js/menu.js" defer></script>
-    <script src="js/geolocation.js" defer></script>
+    <script src="/js/home.js" defer></script>
+
 </body>
 
 </html>
