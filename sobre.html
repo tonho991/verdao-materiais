@@ -117,30 +117,19 @@
     </div>
     </div>
 
-    <div id="CorpoProdutos" class="hidden">
-        teste1
-    </div>
-
-    <div id="CorpoBlog" class="hidden">
-        teste2
-    </div>
-
     <div id="CorpoSobre" class="flex flex-col items-center p-4">
         <h1 class="font-bold">História</h1>
 
-
-
-
         <div class="historia">
 
-            <h2 class="font-bold historia-titulo float-none"> Verdão Construção e Acabamento</h2>
+            <h2 id="titulo-historia">Verdão Construção e Acabamento</h2>
 
 
             <div style="margin-top: 20px;">
                 <video id="video-sobre" class="float-left" width="560" height="315" controls>
                     <source src="/assets/video/historia.mp4"/>
                 </video>    
-                <p>
+                <p id="text-historia">
                     Nossa história é um verdadeiro marco de determinação e paixão! Tudo começou em 12 de julho de 1995,
                     quando
                     nasceu a Verdão Materiais para Construção, inspirada no lendário Estádio Governador José Fragelli,
@@ -170,44 +159,45 @@
 
         </div>
 
-        <h2 class="font-bold">Lojas:</h2>
+        <h2 class="font-bold">Nossas Lojas</h2>
 
         <div class="lojas-container">
             <div class="lojas">
-                <h2>Matriz</h2>
+                <p id="loja-title">Matriz</p>
                 <img src="/assets/img/verde1.jpg">
-                <span>65 3314-1000</span>
-                <p>
+              
+                <a href="tel:(65) 3314-1000" class="text-lg font-semibold mt-2 mb-1">(65) 3314-1000</a>
+                <a href="https://maps.app.goo.gl/4qsqrvVqp7PjVoUi7">
                     Av. Agrícola Paes De Barros, n° 760, B.Cidade Alta
                     CEP 78030-210, Cuiabá - Mato Grosso - 37.432.150/0001-84
-                </p>
+                </a>
             </div>
             <div class="lojas">
-                <h2>Carmindo de Campos</h2>
+                <p id="loja-title">Carmindo de Campos</p>
                 <img src="/assets/img/carmindodecampos.jpg">
-                <span>65 3027-9700</span>
-                <p>
+                <a href="tel:(65) 3027-9700" class="text-lg font-semibold mt-2 mb-1">65 3027-9700</a>
+                <a href="https://maps.app.goo.gl/X3uujzGJuxWorfuo7">
                     Av. Carmindo de Campos, 451 - Jardim Shangri-la Cuiabá - MT
                     CEP 78070-205, Cuiabá - Mato Grosso - 37.432.150 /0007-70
-                </p>
+                </a>
             </div>
             <div class="lojas">
-                <h2>Santa Cruz</h2>
+                <p id="loja-title">Santa Cruz</p>
                 <img src="/assets/img/santacruz.jpg">
-                <span>65 3611-6000</span>
-                <p>
+                <a href="tel:(65) 3611-6000" class="text-lg font-semibold mt-2 mb-1">65 3611-6000</a>
+                <a href="https://maps.app.goo.gl/GuQDBiBai8RA6k2c8">
                     Av. Arquimedes Pereira Lima n°. 3000, Santa Cruz I
                     78068-305 - Cuiabá - Mato Grosso - 37.432.150 /0003-46
-                </p>
+                </a>
             </div>
             <div class="lojas">
-                <h2>CPA</h2>
+                <p id="loja-title">CPA</p>
                 <img src="/assets/img/cpa.jpg">
-                <span>65 3056-5000</span>
-                <p>
+                <a href="tel:(65) 3056-5000" class="text-lg font-semibold mt-2 mb-1">65 3056-5000</a>
+                <a href="https://maps.app.goo.gl/FLTGd9cC1CxkSCiS8" >
                     Av. Governador Dante de Oliveira, Nº 1245, Novo Horizonte
                     78058-688 - Cuiabá - Mato Grosso - 37.432.150 /0005-08
-                </p>
+                </a>
             </div>
         </div>
 
@@ -429,7 +419,6 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="js/menu.js" defer></script>
-    <script src="js/geolocation.js" defer></script>
     
     <script>
         $(document).ready(function () {
