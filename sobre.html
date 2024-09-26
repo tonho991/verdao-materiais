@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <title>Verdão Construção e Acabamentos</title>
+
+    <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
+    <meta name="og:title" content="Verdão Materiais de Construção" />
+    <meta name="og:description" content="Conheça a Loja Mais Verde de Cuiabá." />
+    <meta name="og:image" content="https://verdao-materiais.vercel.app/assets/img/logo_horizontal_black.png" />
+    <meta name="og:type" content="company" />
+
+    <!-- Implementação JQuery & Bootstrap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+        integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Fim -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/css/intlTelInput.css">
+
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/items.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/sobre.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .iti {
+            color: black;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="flex justify-between items-center bg-strongGreen p-4">
+            <div class="hidden md:flex items-center space-x-4">
+                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556533141000"> Matriz 65 3314-1000</a>
+                <div class="border-l-4 border-limeGreen h-10"></div>
+                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530279700">Carmindo 65 3027-9700</a>
+            </div>
+
+            <div class="flex-1 flex justify-center">
+                <img src="assets/img/logo_horizontal_white.png.png" alt="logo verdão" loading="lazy"
+                    class="h-12 w-auto">
+            </div>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530565000">CPA 65 3056-5000</a>
+                <div class="border-l-4 border-limeGreen h-10"></div>
+                <h3 class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556536116000">Santa Cruz 65 3611-6000</h3>
+            </div>
+        </div>
+        <nav class="bg-limeGreen p-2 relative">
+            <ul class="flex items-center space-x-4">
+                <i class="fa-solid fa-bars text-white flex items-center ml-4 text-3xl cursor-pointer lg:hidden"
+                    id="menu-toggle"></i>
+                <div class="flex-1 flex justify-center">
+                    <li><a href="/lojas-proximas.html" class="text-strongGreen hover:underline font-bold mr-3">Lojas</a></li>
+                    <li><a href="/calculadora.html" class="text-strongGreen hover:underline font-bold mr-3">Calculadora</a></li>
+                    <li><a href="/sobre.html" class="text-strongGreen hover:underline font-bold">Sobre</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div id="menu"
+        class="fixed top-0 left-0 w-full h-full bg-limeGreen flex-col items-center justify-center z-50 hidden">
+        <button class="absolute top-4 right-4 text-white text-3xl focus:outline-none" id="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="text-white text-center space-y-6 px-6">
+            <h3 class="text-3xl font-bold">Contatos</h3>
+            <div class="space-y-4">
+                <div class="flex flex-col items-center">
+                    <h4 class="text-lg font-semibold">CPA</h4>
+                    <a href="https://api.whatsapp.com/send?phone=556530565000" class="text-md">65 3056-5000</a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="text-lg font-semibold">Carmindo</h4>
+                    <a href="https://api.whatsapp.com/send?phone=556530279700" class="text-md">65 3027-9700</a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="text-lg font-semibold">Matriz</h4>
+                    <a href="https://api.whatsapp.com/send?phone=556533141000" class="text-md">65 3314-1000</a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h4 class="text-lg font-semibold">Santa Cruz</h4>
+                    <a href="https://api.whatsapp.com/send?phone=556536116000" class="text-md">65 3611-6000</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="CorpoProdutos" class="hidden">
+        teste1
+    </div>
+
+    <div id="CorpoBlog" class="hidden">
+        teste2
+    </div>
+
+    <div id="CorpoSobre" class="flex flex-col items-center p-4">
+        <h1 class="font-bold">História</h1>
+
+
+
+
+        <div class="historia">
+
+            <h2 class="font-bold historia-titulo float-none"> Verdão Construção e Acabamento</h2>
+
+
+            <div style="margin-top: 20px;">
+                <video id="video-sobre" class="float-left" width="560" height="315" controls>
+                    <source src="/assets/video/historia.mp4"/>
+                </video>    
+                <p>
+                    Nossa história é um verdadeiro marco de determinação e paixão! Tudo começou em 12 de julho de 1995,
+                    quando
+                    nasceu a Verdão Materiais para Construção, inspirada no lendário Estádio Governador José Fragelli,
+                    carinhosamente conhecido como Verdão.
+                    Desde o início, fomos impulsionados pelo espírito inovador e audacioso dos nossos líderes, que, com
+                    muito
+                    empenho, transformaram uma pequena loja de 180 m² em um ponto de referência na nossa comunidade. Em
+                    pouco
+                    tempo,contávamos com apenas 4 funcionários, mas o sonho de crescer e evoluir sempre esteve
+                    presente.A
+                    partir
+                    de 2010, aceleramos nossos investimentos e inauguramos nossa primeira filial na movimentada Avenida
+                    Arquimedes Pereira Lima. Com mais de 1000 m², esse novo espaço nos permitiu atender ainda melhor
+                    nossos
+                    clientes, oferecendo uma gama completa de produtos e soluções para construção e acabamento.
+                    Percebendo a importância de uma infraestrutura robusta e eficiente, construímos nosso Centro de
+                    Distribuição
+                    na Av. Fernando Correa, nº 990, uma estrutura gigantesca de 11000 m². Aqui, abrigamos mais de 18.000
+                    itens,
+                    desde o básico até o mais sofisticado, garantindo que cada cliente encontre exatamente o que
+                    precisa,
+                    com
+                    conforto e confiança.
+                </p>
+            </div>
+
+
+        </div>
+
+        <h2 class="font-bold">Lojas:</h2>
+
+        <div class="lojas-container">
+            <div class="lojas">
+                <h2>Matriz</h2>
+                <img src="/assets/img/verde1.jpg">
+                <span>65 3314-1000</span>
+                <p>
+                    Av. Agrícola Paes De Barros, n° 760, B.Cidade Alta
+                    CEP 78030-210, Cuiabá - Mato Grosso - 37.432.150/0001-84
+                </p>
+            </div>
+            <div class="lojas">
+                <h2>Carmindo de Campos</h2>
+                <img src="/assets/img/carmindodecampos.jpg">
+                <span>65 3027-9700</span>
+                <p>
+                    Av. Carmindo de Campos, 451 - Jardim Shangri-la Cuiabá - MT
+                    CEP 78070-205, Cuiabá - Mato Grosso - 37.432.150 /0007-70
+                </p>
+            </div>
+            <div class="lojas">
+                <h2>Santa Cruz</h2>
+                <img src="/assets/img/santacruz.jpg">
+                <span>65 3611-6000</span>
+                <p>
+                    Av. Arquimedes Pereira Lima n°. 3000, Santa Cruz I
+                    78068-305 - Cuiabá - Mato Grosso - 37.432.150 /0003-46
+                </p>
+            </div>
+            <div class="lojas">
+                <h2>CPA</h2>
+                <img src="/assets/img/cpa.jpg">
+                <span>65 3056-5000</span>
+                <p>
+                    Av. Governador Dante de Oliveira, Nº 1245, Novo Horizonte
+                    78058-688 - Cuiabá - Mato Grosso - 37.432.150 /0005-08
+                </p>
+            </div>
+        </div>
+
+        <div class="cards-container">
+            <div class="cards">
+                <h2>Missão</h2>
+                <p>
+                    Nossa missão é oferecer materiais de construção de qualidade superior, garantindo soluções
+                    confiáveis e sustentáveis para nossos clientes. Comprometemo-nos a facilitar a realização de
+                    projetos, promovendo inovação e excelência em cada etapa.
+                </p>
+            </div>
+            <div class="cards">
+                <h2>Visão</h2>
+                <p>
+                    Nossa visão é ser a empresa líder em fornecimento de materiais de construção, reconhecida pela
+                    qualidade, e compromisso com a sustentabilidade. Aspiramos a transformar o setor, contribuindo para
+                    o desenvolvimento de comunidades e a construção de um futuro melhor.
+                </p>
+            </div>
+            <div class="cards">
+                <h2>Valores</h2>
+                <p>
+                    Nossos valores incluem a integridade, a qualidade e a inovação, pautando nossas ações na
+                    transparência e no respeito ao meio ambiente. Valorizamos a parceria com nossos clientes e
+                    colaboradores, promovendo um ambiente de confiança e colaboração.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <form action="#">
+            <h2>Fique por dentro das
+                novidades. Receba as melhores
+                oferta no seu e-mail.</h2>
+            <div class="input-box">
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="text" placeholder="Telefone" required>
+
+            </div>
+
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+            </div>
+
+            <input type="submit" value="Cadastrar" class="btn">
+        </form>
+
+        <div class="social-container">
+            <div class="social">
+                <img src="/assets/img/logo.branco.webp" alt="">
+                <h3>Siga em nossas redes sociais.</h3>
+                <a href="https://pt-br.facebook.com/grupoverdao/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UC_sCDT1_eXgLkP81cNkHz-w"><i
+                        class='fa-brands fa-youtube'></i></a>
+                <a href="https://www.instagram.com/grupoverdao/?hl=pt"><i class='fa-brands fa-instagram'></i></a>
+                <a href="https://www.linkedin.com/company/verdao-construcao-e-acabamento"><i
+                        class='fa-brands fa-linkedin'></i></a>
+            </div>
+            <div class="icon-paymento">
+                <h2>Formas de Pagamento</h2>
+                <img src="/assets/img/icon-visa.svg" alt="visa">
+                <img src="/assets/img/icon-mastercard.svg" alt="mastercard">
+                <img src="/assets/img/icon-elo.svg" alt="elo">
+                <img src="/assets/img/icon-deners-club.svg" alt="deners club">
+                <br>
+                <img src="/assets/img/icon-american-express.svg" alt="amex">
+                <img src="/assets/img/icon-pix.svg" alt="pix">
+                <img src="/assets/img/icon-boleto.svg" alt="boleto">
+
+                <p class="copyrighte">
+                    © Desenvolvido Pelos Alunos do Projeto Café com o Presidente.
+                </p>
+            </div>
+
+
+        </div>
+
+        <div class="container">
+            <details>
+                <summary>Atendimento</summary>
+                <div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">Fale Conosco</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Dúvidas Frequentes</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Trocas e Devoluções</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Retire na Loja</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Politica de Entrega</a>
+                        </li>
+                    </ul>
+            </details>
+        </div>
+        </div>
+
+        <div class="containe">
+
+            <h2>Atendimento</h2>
+            <div>
+                <ul class="list">
+                    <li>
+                        <a href="#">Fale Conosco</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Dúvidas Frequentes</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Trocas e Devoluções</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Retire na Loja</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Politica de Entrega</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="icon-pagamento">
+                <h3>Selo de Pagamento</h3>
+                <img src="/assets/img/icon-security-google.svg" alt="security">
+                <img src="/assets/img/icon-security-lets-encrypt.svg" alt="lets">
+            </div>
+
+
+        </div>
+
+       <div class="containe">
+
+            <h2>Institucional</h2>
+            <div>
+                <ul class="list">
+                    <li>
+                        <a href="/sobre.html">A Verdão</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="/lojas-proximas.html">Lojas</a>
+                    </li>
+
+                    <li>
+                        <a href="https://grupoverdao.vagas.solides.com.br/">Trabalhe Conosco</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div> 
+
+        <div class="container">
+            <details>
+                <summary>Institucional</summary>
+                <div>
+                    <ul class="list">
+                        <li>
+                            <a href="/sobre.html">A Verdão</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+
+                        <li>
+                            <a href="/lojas-proximas.html">Lojas</a>
+                        </li>
+
+                        <li>
+                            <a href="https://grupoverdao.vagas.solides.com.br/">Trabalhe Conosco</a>
+                        </li>
+                    </ul>
+            </details>
+        </div>
+        </div>
+
+        <div class="icon-payment">
+            <h2>Formas de Pagamento</h2>
+            <img src="/assets/img/icon-visa.svg" alt="visa">
+            <img src="/assets/img/icon-mastercard.svg" alt="mastercard">
+            <img src="/assets/img/icon-elo.svg" alt="elo">
+            <img src="/assets/img/icon-deners-club.svg" alt="deners club">
+            <img src="/assets/img/icon-american-express.svg" alt="amex">
+            <img src="/assets/img/icon-pix.svg" alt="pix">
+            <img src="/assets/img/icon-boleto.svg" alt="boleto">
+        </div>
+
+
+        <div class="icon-payment">
+            <h2>Selo de Pagamento</h2>
+            <img src="/assets/img/icon-security-google.svg" alt="security">
+            <img src="/assets/img/icon-security-lets-encrypt.svg" alt="lets">
+        </div>
+
+        <p class="copyright">
+            Copyright © 2024 | Todos os Direitos Reservados
+        </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/geolocation.js" defer></script>
+    
+    <script>
+        $(document).ready(function () {
+            $("#btnProdutos").click(function (e) {
+                e.preventDefault();
+                $("#CorpoProdutos").show();
+                $("#CorpoBlog").hide();
+                $("#CorpoSobre").hide();
+            });
+
+            $("#btnBlog").click(function (e) {
+                e.preventDefault();
+                $("#CorpoProdutos").hide();
+                $("#CorpoBlog").show();
+                $("#CorpoSobre").hide();
+            });
+
+            $("#btnSobre").click(function (e) {
+                e.preventDefault();
+                $("#CorpoProdutos").hide();
+                $("#CorpoBlog").hide();
+                $("#CorpoSobre").show();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
