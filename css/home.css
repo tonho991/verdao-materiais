@@ -1,10 +1,4 @@
-:root {
-    --primary-color: #003223;
-    --second-color: #003223;
-    --text-color: #003223;
-}
-
-.carrossel {
+.carousel {
     margin-top: 15px;
     margin-bottom: 35px;
     display: flex;
@@ -20,9 +14,6 @@
 .carousel-inner img {
     object-fit: cover;
 }
-
-
-
 
 
 /* Codigos dos produtos */
@@ -168,12 +159,12 @@
     }
 
     .infos-box img{
-        width: 30px;
+        width: 30px; 
         height: auto;
     }
 
-    .carousel-inner {
-        width: 400px;
+    .carousel-inner{
+        width: 350px;
         max-height: auto;
     }
     .rect {

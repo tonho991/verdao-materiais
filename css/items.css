@@ -122,6 +122,7 @@ Loading
     right: 35px;
     cursor: pointer;
     padding: 13px;
+    z-index: 2;
 }
 
 @keyframes notify {
@@ -158,4 +159,5 @@ Loading
     .buttons-container button {
         margin-top: 10px;
     }
+
 }

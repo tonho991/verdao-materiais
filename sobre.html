@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
     <title>Verdão Construção e Acabamentos</title>
 
     <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
@@ -60,20 +59,26 @@
     <header>
         <div class="flex justify-between items-center bg-strongGreen p-4">
             <div class="hidden md:flex items-center space-x-4">
-                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556533141000"> Matriz 65 3314-1000</a>
+                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556533141000">
+                    Matriz 65 3314-1000</a>
                 <div class="border-l-4 border-limeGreen h-10"></div>
-                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530279700">Carmindo 65 3027-9700</a>
+                <a class="font-semibold text-white text-sm"
+                    href="https://api.whatsapp.com/send?phone=556530279700">Carmindo 65 3027-9700</a>
             </div>
 
             <div class="flex-1 flex justify-center">
-                <img src="assets/img/logo_horizontal_white.png.png" alt="logo verdão" loading="lazy"
-                    class="h-12 w-auto">
+                <a href="/">
+                    <img src="assets/img/logo_horizontal_white.png.png" alt="logo verdão" loading="lazy"
+                        class="h-12 w-auto">
+                </a>
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
-                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530565000">CPA 65 3056-5000</a>
+                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530565000">CPA
+                    65 3056-5000</a>
                 <div class="border-l-4 border-limeGreen h-10"></div>
-                <h3 class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556536116000">Santa Cruz 65 3611-6000</h3>
+                <h3 class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556536116000">
+                    Santa Cruz 65 3611-6000</h3>
             </div>
         </div>
         <nav class="bg-limeGreen p-2 relative">
@@ -81,8 +86,10 @@
                 <i class="fa-solid fa-bars text-white flex items-center ml-4 text-3xl cursor-pointer lg:hidden"
                     id="menu-toggle"></i>
                 <div class="flex-1 flex justify-center">
-                    <li><a href="/lojas-proximas.html" class="text-strongGreen hover:underline font-bold mr-3">Lojas</a></li>
-                    <li><a href="/calculadora.html" class="text-strongGreen hover:underline font-bold mr-3">Calculadora</a></li>
+                    <li><a href="/lojas-proximas.html" class="text-strongGreen hover:underline font-bold mr-3">Lojas</a>
+                    </li>
+                    <li><a href="/calculadora.html"
+                            class="text-strongGreen hover:underline font-bold mr-3">Calculadora</a></li>
                     <li><a href="/sobre.html" class="text-strongGreen hover:underline font-bold">Sobre</a></li>
                 </div>
             </ul>
@@ -127,8 +134,8 @@
 
             <div style="margin-top: 20px;">
                 <video id="video-sobre" class="float-left" width="560" height="315" controls>
-                    <source src="/assets/video/historia.mp4"/>
-                </video>    
+                    <source src="/assets/video/historia.mp4" />
+                </video>
                 <p id="text-historia">
                     Nossa história é um verdadeiro marco de determinação e paixão! Tudo começou em 12 de julho de 1995,
                     quando
@@ -165,7 +172,7 @@
             <div class="lojas">
                 <p id="loja-title">Matriz</p>
                 <img src="/assets/img/verde1.jpg">
-              
+
                 <a href="tel:(65) 3314-1000" class="text-lg font-semibold mt-2 mb-1">(65) 3314-1000</a>
                 <a href="https://maps.app.goo.gl/4qsqrvVqp7PjVoUi7">
                     Av. Agrícola Paes De Barros, n° 760, B.Cidade Alta
@@ -194,7 +201,7 @@
                 <p id="loja-title">CPA</p>
                 <img src="/assets/img/cpa.jpg">
                 <a href="tel:(65) 3056-5000" class="text-lg font-semibold mt-2 mb-1">65 3056-5000</a>
-                <a href="https://maps.app.goo.gl/FLTGd9cC1CxkSCiS8" >
+                <a href="https://maps.app.goo.gl/FLTGd9cC1CxkSCiS8">
                     Av. Governador Dante de Oliveira, Nº 1245, Novo Horizonte
                     78058-688 - Cuiabá - Mato Grosso - 37.432.150 /0005-08
                 </a>
@@ -344,7 +351,7 @@
 
         </div>
 
-       <div class="containe">
+        <div class="containe">
 
             <h2>Institucional</h2>
             <div>
@@ -367,7 +374,7 @@
                 </ul>
 
             </div>
-        </div> 
+        </div>
 
         <div class="container">
             <details>
@@ -419,14 +426,14 @@
 
     <div class="fab" id="fab" onclick="fabClick()">
         <a href="/falecom.html" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/img/whatsapp-icon.png" alt="whatsapp" >
+            <img src="/assets/img/whatsapp-icon.png" alt="whatsapp">
         </a>
     </div>
 
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="js/menu.js" defer></script>
-    
+
     <script>
         $(document).ready(function () {
             $("#btnProdutos").click(function (e) {
