@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
-    <title>Enviar Comentário - Verdão Construção e Acabamentos</title>
+    <title>Atendimento - Verdão Construção e Acabamentos</title>
 
     <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
     <meta name="og:title" content="Verdão Materiais de Construção" />
@@ -117,34 +117,42 @@
         </div>
     </div>
 
-    <main class="h-screen flex items-center justify-center">
+    <main class="flex items-center justify-center">
         <form id="sendComment" class="p-3 m-10 w-80 bg-strongGreen rounded text-white shadow-xl">
-            <p class="text-center mb-1 font-semibold text-xl">Enviar Comentário</p>
+            <p class="text-center mb-1 font-semibold text-xl">Falar Com Atendimento</p>
             <div class="form-group mb-3">
                 <label for="input-name">Nome</label>
                 <input type="name" id="input-name" name="nome" class="form-control hover:border-limeGreen"
-                    placeholder="Digite seu nome completo" />
+                    placeholder="Digite seu nome completo" required />
             </div>
             <div class="form-group mb-3 ">
                 <label for="input-email">E-mail</label>
                 <input type="email" id="input-email" name="email" class="form-control hover:border-limeGreen"
-                    aria-describedby="emailHelp" placeholder="Digite seu endereço de E-mail" />
+                    aria-describedby="emailHelp" placeholder="Digite seu endereço de E-mail" required/>
                 <small id="emailHelp" class="mt-2">Nós nunca compartilhamos seu email com ninguém.</small>
             </div>
             <div class="form-group mb-3">
                 <label for="input-telefone">Telefone</label>
-                <input id="input-telefone" type="tel" class="form-control form-control-sm rounded-5 w-max text-black">
+                <input id="input-telefone" type="tel" class="form-control form-control-sm rounded-5 w-max text-black" required> 
             </div>
             <div class="form-group mb-3">
                 <label for="input-assunto">Assunto</label>
                 <input type="text" id="input-assunto" name="assunto" class="form-control hover:border-limeGreen"
-                    placeholder="Digite o assunto" />
+                    placeholder="Digite o assunto" required/>
             </div>
             <div class="form-group mb-3">
                 <label for="input-mensagem">Mensagem</label>
                 <textarea id="input-mensagem" name="mensagem" class="form-control hover:border-limeGreen" rows="3"
-                    placeholder="Digite sua mensagem"></textarea>
+                    placeholder="Digite sua mensagem" required></textarea>
             </div>
+
+            <select id="department">
+                <option value="" disabled selected>Selecione um departamento</option>
+                <option value="Vendas">Vendas</option>
+                <option value="Financeiro">Financeiro</option>
+                <option value="Entregas">Entregas</option>
+                <option value="Outro">Outro</option>
+            </select>
 
             <div class="g-recaptcha mb-3" data-sitekey="6LfIrRgqAAAAAMWzrrgiW-EeckPfiItlps1-pguX"></div>
         
@@ -162,10 +170,10 @@
             <h2>Fique por dentro das
                 novidades. Receba as melhores
                 oferta no seu e-mail.</h2>
+
             <div class="input-box">
                 <input type="text" placeholder="Nome Completo" required>
                 <input type="text" placeholder="Telefone" required>
-
             </div>
 
             <div class="input-box">
@@ -173,6 +181,8 @@
             </div>
 
             <input type="submit" value="Cadastrar" class="btn">
+
+            <p style="font-size: 0.8rem;"> ao clicar em "Cadastrar" você está de acordo com a nossa <a href="/politica-de-privacidade.html" style="color:#037441; font-weight: 700;">Politica de Privacidade</a>.</p>
         </form>
 
         <div class="social-container">

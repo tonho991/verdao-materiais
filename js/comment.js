@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
 jQuery(function ($) {
   $("#input-telefone").mask("(99) 9999-99999");
 
@@ -26,7 +27,8 @@ jQuery(function ($) {
     $(".loading").show();
     const formData = new FormData(this);
 
-    formData.append("telefone", document.getElementById("input-telefone").value)
+    formData.append("telefone", $("#input-telefone").val());
+    formData.append("department", $("#department").val() || "Outro")
 
     try {
       const response = await fetch("https://api-verdao-materiais.vercel.app/comment", {

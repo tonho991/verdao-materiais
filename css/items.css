@@ -13,6 +13,7 @@
     border: none;
     border-radius: 5px;
     padding: 8px;
+
     &:focus {
         border: none;
         outline: none;
@@ -26,6 +27,7 @@
     border: none;
     border-radius: 5px;
     padding: 8px;
+
     &:focus {
         border: none;
         outline: none;
@@ -102,11 +104,56 @@ Loading
     animation: spin 1s linear infinite;
 }
 
+
+/* WhatsApp Floating Button */
+
+.fab {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 100px;
+    padding: 8px;
+    background-color: #3fac0d;
+    box-shadow: 2px 2px 20px 5px #3fac0d7c;
+    bottom: 30px;
+    right: 35px;
+    cursor: pointer;
+    padding: 13px;
+}
+
+@keyframes notify {
+    0% {
+       right: 33px;
+    }
+
+    50% {
+        bottom: 27px;
+    }
+
+    75% {
+        right: 35px;
+    }
+
+    100% {
+        right: 35px;
+    }
+    
+}
+
+
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .buttons-container button {
         margin-top: 10px;

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
-    <title>Lojas Mais Próximas - Verdão Construção e Acabamentos</title>
+    <title>Politica de Privacidade - Verdão Construção e Acabamentos</title>
 
     <meta property="og:url" content="https://verdao-materiais.vercel.app/" />
     <meta name="og:title" content="Verdão Materiais de Construção" />
@@ -28,18 +28,15 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <!-- Fim -->
-
-
-
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/css/intlTelInput.css">
-
+   
     <link rel="stylesheet" href="css/output.css">
-    <link rel="stylesheet" href="css/items.css">
-    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/items.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,23 +45,42 @@
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        .iti {
-            color: black;
-        }
-    </style>
+        <style>
+            main {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4;
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                color: #2d6a4f;
+            }
+            h2 {
+                color: #40916c;
+                margin-top: 10px;
+            }
+            p {
+                margin: 10px 0;
+            }
+        </style>
 </head>
 
 <body>
     <header>
         <div class="flex justify-between items-center bg-strongGreen p-4">
             <div class="hidden md:flex items-center space-x-4">
-                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556533141000">
-                    Matriz 65 3314-1000</a>
+                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556533141000"> Matriz 65 3314-1000</a>
                 <div class="border-l-4 border-limeGreen h-10"></div>
-                <a class="font-semibold text-white text-sm"
-                    href="https://api.whatsapp.com/send?phone=556530279700">Carmindo 65 3027-9700</a>
+                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530279700">Carmindo 65 3027-9700</a>
             </div>
 
             <div class="flex-1 flex justify-center">
@@ -73,29 +89,23 @@
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
-                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530565000">CPA
-                    65 3056-5000</a>
+                <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530565000">CPA 65 3056-5000</a>
                 <div class="border-l-4 border-limeGreen h-10"></div>
-                <a class="font-semibold text-white text-sm"
-                    href="https://api.whatsapp.com/send?phone=556536116000">Santa Cruz 65 3611-6000</a>
+                <h3 class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556536116000">Santa Cruz 65 3611-6000</h3>
             </div>
         </div>
-
         <nav class="bg-limeGreen p-2 relative">
             <ul class="flex items-center space-x-4">
                 <i class="fa-solid fa-bars text-white flex items-center ml-4 text-3xl cursor-pointer lg:hidden"
                     id="menu-toggle"></i>
                 <div class="flex-1 flex justify-center">
-                    <li><a href="/lojas-proximas.html" class="text-strongGreen hover:underline font-bold mr-3">Lojas</a>
-                    </li>
-                    <li><a href="/calculadora.html"
-                            class="text-strongGreen hover:underline font-bold mr-3">Calculadora</a></li>
+                    <li><a href="/lojas-proximas.html" class="text-strongGreen hover:underline font-bold mr-3">Lojas</a></li>
+                    <li><a href="/calculadora.html" class="text-strongGreen hover:underline font-bold mr-3">Calculadora</a></li>
                     <li><a href="/sobre.html" class="text-strongGreen hover:underline font-bold">Sobre</a></li>
                 </div>
             </ul>
         </nav>
     </header>
-
     <div id="menu"
         class="fixed top-0 left-0 w-full h-full bg-limeGreen flex-col items-center justify-center z-50 hidden">
         <button class="absolute top-4 right-4 text-white text-3xl focus:outline-none" id="close-menu">
@@ -124,142 +134,55 @@
         </div>
     </div>
 
-    </div>
-    </div>
-    </div>
+   <main class="">
+      <h1 class="text-center mb-1 text-xl font-semibold">Política de Privacidade – Verdão Materiais</h1>
+      <p>A Verdão Materiais valoriza sua privacidade e está comprometida em proteger seus dados pessoais. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e compartilhamos suas informações quando você utiliza nosso site, especialmente ao se inscrever para receber notificações por e-mail.</p>
 
-    <main>
-        <div class="carrossel">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="/assets/img/slide1.png" alt="Primeiro Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/assets/img/slide2.png" alt="Segundo Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/assets/img/slide3.png" alt="Terceiro Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/assets/img/slide4.png" alt="Terceiro Slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
-            </div>
+      <h2>1. Coleta de Informações</h2>
+      <p>Ao navegar em nosso site ou se inscrever para receber notificações, podemos coletar os seguintes tipos de informações:</p>
+      <ul>
+          <li><strong>Dados pessoais</strong>: nome, endereço de e-mail, e outros dados que você nos fornece ao se cadastrar.</li>
+          <li><strong>Dados de navegação</strong>: endereço IP, localização geográfica, tipo de navegador, duração da visita, páginas acessadas e outras estatísticas.</li>
+      </ul>
 
+      <h2>2. Uso das Informações</h2>
+      <p>As informações coletadas são utilizadas para:</p>
+      <ul>
+          <li>Enviar notificações por e-mail sobre novidades, promoções e atualizações de produtos e serviços.</li>
+          <li>Melhorar a navegação e a experiência do usuário no site.</li>
+          <li>Realizar análises internas para melhorar nossos produtos e serviços.</li>
+      </ul>
 
-        </div>
+      <h2>3. Armazenamento e Segurança dos Dados</h2>
+      <p>Armazenamos suas informações em servidores seguros e tomamos medidas para proteger seus dados contra acesso não autorizado, divulgação ou destruição. No entanto, apesar de nossos esforços, não podemos garantir total segurança contra invasões.</p>
 
-        <div class="infos-container">
-            <div class="infos-box">
-                <img src="/assets/img/caminhao.webp" alt="Cartao">
-                <div class="info-text">
-                    <p>ENTREGAS EM ATÉ</p>
-                    <p id="highlight">48 HORAS</p>
-                </div>
-            </div>
-            <div class="infos-box">
-                <img src="/assets/img/cartao.webp" alt="Cartao">
-                <div class="info-text">
-                    <p>TUDO EM ATÉ</p>
-                    <p id="highlight">10x NO CARTÃO</p>
-                </div>
-            </div>
-        </div>
+      <h2>4. Compartilhamento de Informações</h2>
+      <p>Não vendemos, trocamos ou transferimos suas informações pessoais para terceiros, exceto quando necessário para:</p>
+      <ul>
+          <li>Cumprir a lei ou responder a uma solicitação legal.</li>
+          <li>Proteger nossos direitos ou a segurança de outros usuários.</li>
+      </ul>
 
-        <div class="products-container">
-            <section class="produtos">
+      <h2>5. Consentimento</h2>
+      <p>Ao fornecer suas informações pessoais e aceitar esta Política de Privacidade, você concorda em receber notificações por e-mail da Verdão Materiais. Você pode retirar seu consentimento a qualquer momento clicando no link de cancelamento presente em nossos e-mails.</p>
 
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
+      <h2>6. Alterações na Política de Privacidade</h2>
+      <p>Podemos atualizar esta Política de Privacidade periodicamente. Recomendamos que você revise esta página regularmente para se manter informado sobre como estamos protegendo suas informações.</p>
 
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
+      <h2>7. Contato</h2>
+      <p>Se você tiver dúvidas sobre nossa Política de Privacidade, entre em contato conosco através do e-mail: <a href="mailto:contato@grupoverdao.com.br">contato@grupoverdao.com.br</a>.</p>
 
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://chatuba.vtexassets.com/arquivos/ids/173558/Tinta-Acrilica-Muda-Facil-Branco-Neve-Fosco-20L-Glasurit.png?v=637653460367370000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
-
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://img.irroba.com.br/fit-in/600x600/filters:fill(transparent):quality(80)/tintasjd/catalog/dacar/acrilico-premium-18l.png">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
-
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://chatuba.vtexassets.com/arquivos/ids/173558/Tinta-Acrilica-Muda-Facil-Branco-Neve-Fosco-20L-Glasurit.png?v=637653460367370000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
-
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
-
-            </section>
-        </div>
-
-    </main>
-
-    <section class="car-event" id="ford-pickup">
-        <div class="text-container">
-            <h2 id="event-title" class="text-white">
-                VENHA CONHECER O <br>
-                <span id="mark-text">PRIMEIRO CARRO QUE O VOVÔ FEZ ENTREGA! </span> <br>
-                FORD PICK-UP 1929 NAS LOJAS DA VERDÃO!
-            </h2>
-        </div>
-        <div class="image-background">
-            <img id="car-img" src="/assets/img/carro_transparent.png" alt="Carro" />
-        </div>
-        <div class="rect"></div>
-    </section>
+   </main>
 
     <footer class="footer">
         <form action="#">
             <h2>Fique por dentro das
                 novidades. Receba as melhores
                 oferta no seu e-mail.</h2>
+
             <div class="input-box">
                 <input type="text" placeholder="Nome Completo" required>
                 <input type="text" placeholder="Telefone" required>
-
             </div>
 
             <div class="input-box">
@@ -436,9 +359,10 @@
         </div>
 
         <p class="copyright">
-            © Desenvolvido Pelos Alunos do Projeto Café com o Presidente.
+            Copyright © 2024 | Todos os Direitos Reservados
         </p>
     </footer>
+
 
     <div class="fab" id="fab" onclick="fabClick()">
         <a href="/falecom.html" target="_blank" rel="noopener noreferrer">
@@ -446,8 +370,11 @@
         </a>
     </div>
 
-    <script src="/js/home.js" defer></script>
-    <script src="/js/menu.js" defer></script>
+    <script src="js/menu.js" defer></script>
+
+    <script>
+        
+    </script>
 </body>
 
 </html>
