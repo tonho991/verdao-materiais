@@ -25,31 +25,30 @@ jQuery(function ($) {
   $("#sendComment").on("submit", async function (e) {
     e.preventDefault();
     $(".loading").show();
-    const formData = new FormData(this);
 
-    formData.append("telefone", $("#input-telefone").val());
-    formData.append("department", $("#department").val() || "Outro")
+    
+   
+    
 
-    try {
-      const response = await fetch("https://api-verdao-materiais.vercel.app/comment", {
-        method: "POST",
-        body: formData
-      });
+    const text =  `
+    Olá ${getGreetings()}! Meu nome é ${$("#input-name").val()}.
+    
+    Meu email é *${$("#input-email").val()}*.
 
-      if (response.ok) {
-        const result = await response.text();
-        alert(result);
-        $(".loading").hide();
-      } else {
-        alert('Erro ao enviar o comentário');
-        $(".loading").hide();
-      }
-    } catch (error) {
-      console.error("Erro na requisição:", error);
-      alert("Ocorreu um erro ao enviar o comentário.");
-      $(".loading").hide();
-    }
-  })
-})
+    Gostaria de falar com o departamendo de *${$("#input-department").val()}* sobre o assunto *${$("#input-assunto").val()}*.
+
+    *Mensagem*: 
+    
+    ${$("#input-mensagem").val()}
+    `
+
+     const url = `https://api.whatsapp.com/send?phone=5565993403335&text=${text}`
+
+     window.location.href = url;
+     
+     $(".loading").hide();
+
+  });
+});
 
 
