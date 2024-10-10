@@ -1,11 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const menu = document.getElementById("menu");
-  const closeMenuButton = document.getElementById("close-menu");
-  const menuToggle = document.getElementById("menu-toggle");
-
-  menuToggle.addEventListener("click", () => menu.classList.remove("hidden"));
-
-  closeMenuButton.addEventListener("click", () => menu.classList.add("hidden"));
 
   const telInput = document.getElementById("input-telefone");
   window.intlTelInput(telInput, {
@@ -24,31 +17,37 @@ jQuery(function ($) {
 
   $("#sendComment").on("submit", async function (e) {
     e.preventDefault();
+
     $(".loading").show();
 
-    
-   
-    
+    const formData = new FormData(this);
+    formData.append("telefone", $("#input-telefone").val());
+    formData.append("departamento", $("#department").val() || "Outro");
 
-    const text =  `
-    Olá ${getGreetings()}! Meu nome é ${$("#input-name").val()}.
-    
-    Meu email é *${$("#input-email").val()}*.
+    try {
+      const response = await fetch("https://api-verdao-materiais.vercel.app/comment", {
+        method: "POST",
+        body: formData
+      });
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          window.location.href = result.url;
+        } else {
+          alert(result.error)
+        }
 
-    Gostaria de falar com o departamendo de *${$("#input-department").val()}* sobre o assunto *${$("#input-assunto").val()}*.
-
-    *Mensagem*: 
-    
-    ${$("#input-mensagem").val()}
-    `
-
-     const url = `https://api.whatsapp.com/send?phone=5565993403335&text=${text}`
-
-     window.location.href = url;
-     
-     $(".loading").hide();
-
+        $(".loading").hide();
+      } else {
+        alert('Erro ao enviar o comentário');
+        $(".loading").hide();
+      }
+    } catch (error) {
+      alert("Ocorreu um erro ao enviar o comentário.");
+      $(".loading").hide();
+    }
   });
 });
+
 
 

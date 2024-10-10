@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
    
     setInterval(function () {  
         let fab = document.getElementById("fab");
-    
+        if(!fab) return;
+        
         fab.style.animation = 'none'; 
         fab.offsetHeight;          
         fab.style.animation = "notify 0.4s ease-in-out"; 
