@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 $(window).scroll(function (event) {
     var st = $(this).scrollTop();
     if (st > 400) {
@@ -26,5 +27,31 @@ $(window).scroll(function (event) {
     } else {
         $("#toolbar-links").show();
     }
-
 });
+
+if (document.referrer.includes("from=app")) {
+    var currentUrl = window.location.href;
+    var newParam = 'from=app';
+    if (!currentUrl.includes(newParam)) {
+
+        if (currentUrl.indexOf('?') > -1) {
+            if (currentUrl.indexOf('from=') === -1) {
+                window.location.href = currentUrl + '&' + newParam;
+            }
+        } else {
+            window.location.href = currentUrl + '?' + newParam;
+        }
+    }
+}
+
+try {
+    let searchParams = new URLSearchParams(window.location.search);
+
+    let from = searchParams.get("from") || "web";
+
+
+    if (from && from === "app") {
+        $(".main").removeClass("mt-40")
+    }
+
+} catch (e) { }
