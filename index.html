@@ -127,7 +127,7 @@
 
     <main class="mt-40">
 
-        <div class="flex justify-center items-center w-full">
+        <div class="flex justify-center items-center w-full carousel-container">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -135,7 +135,7 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner" style="margin: 0px; padding: 0px; border: 0px; margin: none; ">
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="/assets/img/slide1.png" alt="Primeiro Slide">
                     </div>
@@ -158,7 +158,6 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-
         </div>
 
         <div class="infos-container">
@@ -178,58 +177,105 @@
             </div>
         </div>
 
-        <div class="products-container">
+        <div class="products-container mt-10">
             <section class="produtos">
+                <ul class="product-list">
+                    <li class="product-item">
+                        <div class="relative">
+                            <a href="/calculadora.html?type=tinta">
+                                <i
+                                    class="fa-solid fa-calculator absolute text-2xl calculator-icon top-2 -right-2 hover:text-3xl"></i>
+                            </a>
+                            <div class="circulo">
+                                <img class="img-produto"
+                                    src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
+                            </div>
+                            <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                        </div>
+                    </li>
 
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
+                    <li class="product-item">
+                        <div class="relative">
+                            <a href="/calculadora.html?type=massa-corrida">
+                                <i
+                                    class="fa-solid fa-calculator absolute text-2xl calculator-icon top-2 -right-2 hover:text-3xl"></i>
+                            </a>
+                            <div class="circulo">
+                                <img class="img-produto" src="/assets/img/produtos/massa-corrida.png">
+                            </div>
+                            <p class="product-title"> Massa Corrida 5,7L Coral </p>
+                        </div>
+                    </li>
 
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
+                    <li class="product-item">
+                        <div class="relative">
+                            <a href="/calculadora.html?type=selador">
+                                <i
+                                    class="fa-solid fa-calculator absolute text-2xl calculator-icon top-2 -right-2 hover:text-3xl"></i>
+                            </a>
+                            <div class="circulo">
+                                <img class="img-produto" src="/assets/img/produtos/selador.png">
+                            </div>
+                            <p class="product-title"> Coral Selador Acrílico 3,6L </p>
+                        </div>
+                    </li>
 
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://chatuba.vtexassets.com/arquivos/ids/173558/Tinta-Acrilica-Muda-Facil-Branco-Neve-Fosco-20L-Glasurit.png?v=637653460367370000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
+                    <li class="product-item">
+                        <div class="relative">
+                            <a href="/calculadora.html?type=piso&area=84x84">
+                                <i
+                                    class="fa-solid fa-calculator absolute text-2xl calculator-icon top-2 -right-2 hover:text-3xl"></i>
+                            </a>
+                            <div class="circulo">
+                                <img class="img-produto" src="/assets/img/produtos/piso.png">
+                            </div>
+                            <p class="product-title"> Porcelanato 84x84 Branco </p>
+                        </div>
+                    </li>
 
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://img.irroba.com.br/fit-in/600x600/filters:fill(transparent):quality(80)/tintasjd/catalog/dacar/acrilico-premium-18l.png">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
+                    <li class="product-item">
+                        <div class="relative">
+                            <a href="/calculadora.html?type=tinta">
+                                <i
+                                    class="fa-solid fa-calculator absolute text-2xl calculator-icon top-2 -right-2 hover:text-3xl"></i>
+                            </a>
+                            <div class="circulo">
+                                <img class="img-produto"
+                                    src="https://chatuba.vtexassets.com/arquivos/ids/173558/Tinta-Acrilica-Muda-Facil-Branco-Neve-Fosco-20L-Glasurit.png?v=637653460367370000">
+                            </div>
+                            <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                        </div>
+                    </li>
 
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://chatuba.vtexassets.com/arquivos/ids/173558/Tinta-Acrilica-Muda-Facil-Branco-Neve-Fosco-20L-Glasurit.png?v=637653460367370000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
-
-                <div>
-                    <div class="circulo">
-                        <img class="img-produto"
-                            src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
-                    </div>
-                    <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
-                </div>
-
+                    <li class="product-item">
+                        <div class="relative">
+                            <a href="/calculadora.html?type=tinta">
+                                <i
+                                    class="fa-solid fa-calculator absolute text-2xl calculator-icon top-2 -right-2 hover:text-3xl"></i>
+                            </a>
+                            <div class="circulo">
+                                <img class="img-produto"
+                                    src="https://tezbgl.vteximg.com.br/arquivos/ids/179282-1000-1000/TINTA-ACRILICA-CORALAR-3-6-Litros---CORES---CORAL---1005---40169---5010---24562---29603---5008---1005---5283---26667---1142---40162---43045---43055---1141---40165---40166---1144---43051---5012---5014---43052.png?v=638435192187730000">
+                            </div>
+                            <p class="product-title"> Tinta Acrilica Fosco 18L Branco </p>
+                        </div>
+                    </li>
+                </ul>
             </section>
+        </div>
+
+
+        <div class="buttons-container flex w-full justify-center mt-10 mb-10">
+            <a  class="btn-primary flex justify-center w-80 items-center p-3 border-none hover:bg-limeGreen" href="calculadora.html">
+                <i class="fa-solid fa-calculator text-2xl text-white  mr-2"></i>
+               Vamos calcular materiais?
+            </a>
+
+            <a  class="btn-primary flex justify-center w-80 items-center p-3 border-none hover:bg-limeGreen ml-10" href="lojas-proximas.html">
+                <i class="fa-solid fa-location-dot text-2xl text-white  mr-2"></i>
+                Qual a loja mais próxima?
+            </a>
+
         </div>
 
     </main>

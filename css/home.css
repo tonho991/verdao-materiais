@@ -1,8 +1,18 @@
+a:hover {
+    text-decoration: none;
+}
+
 .carousel {
     margin-top: 15px;
     margin-bottom: 35px;
     width: 900px;
     max-height: auto;
+    margin: 0px 10px 0px 10px;
+}
+
+.carousel-inner {
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 5px #00000057;
 }
 
 .carousel-inner img {
@@ -12,44 +22,56 @@
 
 /* Produtos */
 
-.title-container {
-    background-color: #026655;
+
+.product-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.product-item {
+    list-style: none;
+    padding: 8px;
     width: 200px;
-    border-radius: 0px 10px 10px 0px;
-    padding: 5px;
-    margin-bottom: 20px;
+    height: 300px;
 }
 
-#product-section-title {
-    margin-left: 10px;
-    font-size: 1.5rem;
-    color: white;
-    font-weight: 700;
+.img-produto {
+    width: 100%;
+    height: auto;
 }
 
-.products-container {
-    margin-bottom: 50px;
+.product-title {
+    font-size: 1rem;
 }
 
 .circulo {
-    max-width: 100%;
+    width: 150px;
     background-color: #026655;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
     padding: 10%;
     transition: 0.3s ease-in-out;
-    margin: 10px;
+    margin-bottom: 10px;
+}
+
+
+.calculator-icon {
+    color: #6AB43A;
 }
 
 .circulo:hover {
-    transform: scale(1.1)translateY(-10px);
+    padding: 13px;
 }
 
 .product-title {
     margin-top: 10px;
-    color: #000000;
-    font-size: 1.2rem;
+    overflow-y: auto;
+    /* Adiciona rolagem vertical se necessário */
+    max-height: 100px;
+    /* Altura máxima do texto */
+    text-align: center;
+
 }
 
 /* Evento do Carro */
@@ -102,6 +124,7 @@
     z-index: 0;
 }
 
+
 /* Infos */
 
 .infos-container {
@@ -146,7 +169,6 @@
 
 
 @media (max-width: 880px) {
-
     #product-section-title {
         font-size: 1.4rem;
     }
@@ -178,69 +200,36 @@
         font-size: 1.1rem;
     }
 
-    .produtos {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 1.5%;
-        justify-content: center;
-    }
-
-    .produtos>div {
-        font-size: 0.7em;
-        flex: 1 1 91px;
-        max-width: 160px;
-        text-align: center;
-        margin: 15px 1.5% 0px 1.5%;
-    }
 }
 
-@media (min-width: 1400) {
-    .produtos {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin-right: 10px;
-        justify-content: space-between;
-        background-color: #000000;
-    }
+@media only screen and (max-width: 768px) {
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
 
-    .produtos>div {
-        flex: 1 1 120px;
-        text-align: center;
+        .btn-primary {
+            margin-left: 0;
+            margin-top: 10px;
+        }
     }
+    
+
 }
 
-@media (min-width: 596px)
-/* Tablet */
-    {
-    .produtos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    .produtos>div {
-        font-size: 1.3em;
-        flex: 1 1 100px;
-        max-width: 200px;
-    }
+.product-list::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
 }
 
-@media (min-width: 1025px)
-/* Laptop */
-    {
-    .produtos {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
-        justify-content: space-between;
-    }
+.product-list::-webkit-scrollbar-track {
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #b8b8b898;
+}
 
-    .produtos>div {
-        flex: 1 1 120px;
-        text-align: center;
-    }
+.product-list::-webkit-scrollbar-thumb {
+    background: #025446;
+    border-radius: 10px;
+    
 }

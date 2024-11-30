@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 $(window).scroll(function (event) {
     var st = $(this).scrollTop();
-    if (st !== 0) {
+    if (st > 400) {
         $("#toolbar-links").hide();
     } else {
         $("#toolbar-links").show();
