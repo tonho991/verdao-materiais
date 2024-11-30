@@ -57,35 +57,39 @@
 </head>
 
 <body>
-    <header>
-        <div class="flex justify-between items-center bg-strongGreen p-4">
-            <div class="hidden md:flex items-center space-x-4">
+    <header class="fixed w-full z-10 top-0">
+        <div class="toolbar-container flex justify-between items-center bg-strongGreen p-4">
+            <div class="numbers-toolbar hidden md:flex items-center space-x-4">
                 <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556533141000">
                     Matriz 65 3314-1000</a>
-                <div class="border-l-4 border-limeGreen h-10"></div>
+                <div class="border-l-4 border-limeGreen h-5"></div>
                 <a class="font-semibold text-white text-sm"
                     href="https://api.whatsapp.com/send?phone=556530279700">Carmindo 65 3027-9700</a>
             </div>
 
+            <i class="fa-solid fa-bars text-white flex items-center text-2xl mr-3 ml-0 cursor-pointer lg:hidden"
+                id="menu-toggle"></i>
+                
             <div class="flex-1 flex justify-center">
+                
                 <a href="/">
                     <img src="assets/img/logo_horizontal_white.png.png" alt="logo verdão" loading="lazy"
                         class="h-12 w-auto">
                 </a>
             </div>
 
-            <div class="hidden md:flex items-center space-x-4">
+            <div class="numbers-toolbar hidden md:flex items-center space-x-4">
                 <a class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556530565000">CPA
                     65 3056-5000</a>
-                <div class="border-l-4 border-limeGreen h-10"></div>
-                <h3 class="font-semibold text-white text-sm" href="https://api.whatsapp.com/send?phone=556536116000">
-                    Santa Cruz 65 3611-6000</h3>
+                <div class="border-l-4 border-limeGreen h-5"></div>
+                <a class="font-semibold text-white text-sm"
+                    href="https://api.whatsapp.com/send?phone=556536116000">Santa Cruz 65 3611-6000</a>
             </div>
         </div>
-        <nav class="bg-limeGreen p-2 relative">
+
+        <nav class="bg-limeGreen p-2 relative" id="toolbar-links">
             <ul class="flex items-center space-x-4">
-                <i class="fa-solid fa-bars text-white flex items-center ml-4 text-3xl cursor-pointer lg:hidden"
-                    id="menu-toggle"></i>
+              
                 <div class="flex-1 flex justify-center">
                     <li><a href="/lojas-proximas.html" class="text-strongGreen hover:underline font-bold mr-3">Lojas</a>
                     </li>
@@ -125,7 +129,7 @@
     </div>
     </div>
 
-    <div id="CorpoSobre" class="flex flex-col items-center p-4">
+    <div id="CorpoSobre" class="flex flex-col items-center p-4 mt-40">
         <h1 class="font-bold">História</h1>
 
         <div class="historia">

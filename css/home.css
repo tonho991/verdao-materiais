@@ -1,12 +1,6 @@
 .carousel {
     margin-top: 15px;
     margin-bottom: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-inner {
     width: 900px;
     max-height: auto;
 }
@@ -16,7 +10,7 @@
 }
 
 
-/* Codigos dos produtos */
+/* Produtos */
 
 .title-container {
     background-color: #026655;
@@ -45,6 +39,7 @@
     justify-content: center;
     padding: 10%;
     transition: 0.3s ease-in-out;
+    margin: 10px;
 }
 
 .circulo:hover {
@@ -91,7 +86,7 @@
 #mark-text {
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color:#6AB43A;
+    background-color: #6AB43A;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -126,7 +121,8 @@
     background-color: #256251;
     width: 280px;
     border-radius: 100px;
-    &:first-child{
+
+    &:first-child {
         margin-right: 20px;
     }
 }
@@ -143,8 +139,14 @@
 }
 
 
-@media only screen and (max-width: 768px) {
-   
+
+.carousel-indicators {
+    z-index: 5;
+}
+
+
+@media (max-width: 880px) {
+
     #product-section-title {
         font-size: 1.4rem;
     }
@@ -158,15 +160,16 @@
         font-size: 0.8rem;
     }
 
-    .infos-box img{
-        width: 30px; 
+    .infos-box img {
+        width: 30px;
         height: auto;
     }
 
-    .carousel-inner{
-        width: 350px;
-        max-height: auto;
+    .carousel-inner {
+        margin-left: 10px;
+        margin-right: 10px;
     }
+
     .rect {
         height: 150px;
     }
@@ -174,11 +177,7 @@
     #event-title {
         font-size: 1.1rem;
     }
-}
 
-@media (min-width: 240px)
-/* Celular */
-    {
     .produtos {
         display: flex;
         flex-wrap: wrap;
@@ -195,18 +194,18 @@
     }
 }
 
-@media (min-width: 425px)
-/* Celular */
-    {
-
+@media (min-width: 1400) {
     .produtos {
-        max-width: 568px;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin-right: 10px;
+        justify-content: space-between;
+        background-color: #000000;
     }
 
     .produtos>div {
-        font-size: 0.9em;
-        flex: 1 1 125px;
-        max-width: 160px;
+        flex: 1 1 120px;
         text-align: center;
     }
 }
