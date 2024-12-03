@@ -175,7 +175,6 @@ a:hover {
     .infos-box {
         padding: 5px;
         width: 180px;
-
         &:first-child {
             margin-left: 10px;
         }
@@ -186,7 +185,7 @@ a:hover {
     }
 
     .info-text {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
     }
 
     .infos-box img {
