@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 $(window).scroll(function (event) {
     var st = $(this).scrollTop();
-    if (st > 400) {
+    if (st !== 0) {
         $("#toolbar-links").hide();
     } else {
         $("#toolbar-links").show();
@@ -51,7 +51,11 @@ try {
 
 
     if (from && from === "app") {
-        $(".main").removeClass("mt-40")
+        $(".main").removeClass("mt-40");
+        $(".main").addClass("mt-10")
+        $("#header").hide();
     }
 
-} catch (e) { }
+} catch (e) { 
+    console.log(e)
+}

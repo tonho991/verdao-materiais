@@ -34,7 +34,6 @@ a:hover {
     list-style: none;
     padding: 8px;
     width: 200px;
-    height: 300px;
 }
 
 .img-produto {
@@ -176,6 +175,14 @@ a:hover {
     .infos-box {
         padding: 5px;
         width: 180px;
+
+        &:first-child {
+            margin-left: 10px;
+        }
+
+        &:last-child {
+            margin-right: 10px;
+        }
     }
 
     .info-text {
