@@ -2,60 +2,50 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("menu");
     const closeMenuButton = document.getElementById("close-menu");
     const menuToggle = document.getElementById("menu-toggle");
+    const fab = document.getElementById("fab");
 
+    // Alternar visibilidade do menu
     menuToggle.addEventListener("click", () => menu.classList.remove("hidden"));
-
     closeMenuButton.addEventListener("click", () => menu.classList.add("hidden"));
 
-    setInterval(function () {
-        let fab = document.getElementById("fab");
-        if (!fab) return;
-
-        fab.style.animation = 'none';
-        fab.offsetHeight;
-        fab.style.animation = "notify 0.4s ease-in-out";
-
-    }, 3000);
-});
-
-
-
-$(window).scroll(function (event) {
-    var st = $(this).scrollTop();
-    if (st !== 0) {
-        $("#toolbar-links").hide();
-    } else {
-        $("#toolbar-links").show();
+    // Animação de notificação do FAB
+    if (fab) {
+        setInterval(() => {
+            fab.style.animation = "none";
+            fab.offsetHeight; 
+            fab.style.animation = "notify 0.4s ease-in-out";
+        }, 3000);
     }
 });
 
-if (document.referrer.includes("from=app")) {
-    var currentUrl = window.location.href;
-    var newParam = 'from=app';
-    if (!currentUrl.includes(newParam)) {
 
-        if (currentUrl.indexOf('?') > -1) {
-            if (currentUrl.indexOf('from=') === -1) {
-                window.location.href = currentUrl + '&' + newParam;
-            }
-        } else {
-            window.location.href = currentUrl + '?' + newParam;
-        }
+/* Mostrar/Esconder a parte do toolbar onde fica os links */
+$(window).scroll(() => {
+    const toolbarLinks = $("#toolbar-links");
+    if ($(window).scrollTop() !== 0) {
+        toolbarLinks.hide();
+    } else {
+        toolbarLinks.show();
+    }
+});
+
+/* Parte de verificação da URL, obtendo se a requisição vem do APP na query from. */
+if (document.referrer.includes("from=app")) {
+    const currentUrl = new URL(window.location.href);
+    if (!currentUrl.searchParams.has("from")) {
+        currentUrl.searchParams.append("from", "app");
+        window.location.href = currentUrl.toString();
     }
 }
 
 try {
-    let searchParams = new URLSearchParams(window.location.search);
+    const searchParams = new URLSearchParams(window.location.search);
+    const from = searchParams.get("from") || "web";
 
-    let from = searchParams.get("from") || "web";
-
-
-    if (from && from === "app") {
-        $(".main").removeClass("mt-40");
-        $(".main").addClass("mt-10")
+    if (from === "app") {
+        $(".main").removeClass("mt-40").addClass("mt-10");
         $("#header").hide();
     }
-
-} catch (e) { 
-    console.log(e)
+} catch (error) {
+    console.error("Error processing URL parameters:", error);
 }

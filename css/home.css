@@ -66,9 +66,7 @@ a:hover {
 .product-title {
     margin-top: 10px;
     overflow-y: auto;
-    /* Adiciona rolagem vertical se necessário */
     max-height: 100px;
-    /* Altura máxima do texto */
     text-align: center;
 
 }
